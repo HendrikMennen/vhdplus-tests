@@ -33,5 +33,5 @@ set_location_assignment PIN_D13 -to led
 set_location_assignment PIN_L5 -to Echo
 set_location_assignment PIN_L4 -to Trigger
 set_location_assignment PIN_D7 -to BTN
-set_global_assignment -name NUM_PARALLEL_PROCESSORS 4
-set_global_assignment -name LAST_QUARTUS_VERSION "19.1.0 Lite Edition"
+set_global_assignment -name NUM_PARALLEL_PROCESSORS 12
+set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"

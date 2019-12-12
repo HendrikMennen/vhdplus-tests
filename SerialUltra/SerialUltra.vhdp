@@ -54,18 +54,18 @@ Main
                 LastButton <= BTN;
                 if(BTN = '1')
                 {
-                    if(not EnableDistance)
+                    if(EnableDistance = false)
                     {
                         NewFunction assignString (s"Distance measuring enabled!\n", sendEnabledMessage);
                         NewFunction printString (sendEnabledMessage, UART_Interface_TX_Data, UART_Interface_TX_Busy, UART_Interface_TX_Enable);
-                        
-                        Wait(50ms);
+                                             
                         EnableDistance <= true;
+                        Wait(50ms);
                     }
                     else
                     {
                         EnableDistance <= false;
-                        Wait(50ms);                        
+                        Wait(50ms);
                         
                         NewFunction assignString (s"Distance measuring disabled!\n", sendDisabledMessage);
                         NewFunction printString (sendDisabledMessage, UART_Interface_TX_Data, UART_Interface_TX_Busy, UART_Interface_TX_Enable);
