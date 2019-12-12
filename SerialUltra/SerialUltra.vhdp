@@ -1,0 +1,103 @@
+Main
+(
+    led           : OUT STD_LOGIC := '0';
+    RX            : IN  STD_LOGIC;
+    TX            : OUT STD_LOGIC;
+    Trigger          : OUT STD_LOGIC;
+    Echo             : IN STD_LOGIC;
+    BTN : IN STD_LOGIC;
+)
+{
+    SIGNAL Ultrasonic_Controller_Dist             : NATURAL   range 0 to 1000;
+    SIGNAL UART_Interface_TX_Enable     : STD_LOGIC;
+    SIGNAL UART_Interface_TX_Busy       : STD_LOGIC;
+    SIGNAL UART_Interface_TX_Data       : STD_LOGIC_VECTOR (7 DOWNTO 0);
+    SIGNAL UART_Interface_RX_Busy       : STD_LOGIC;
+    SIGNAL UART_Interface_RX_Data       : STD_LOGIC_VECTOR (7 DOWNTO 0);
+    SIGNAL UART_Interface_RX_Error      : STD_LOGIC;
+    
+    SIGNAL EnableDistance : BOOLEAN := false;
+    SIGNAL LastButton : STD_LOGIC := '1';
+    
+    NewComponent UART_Interface
+    (
+        
+        Baud_Rate     => 9600,
+        
+        RX            => RX,
+        TX            => TX,
+        TX_Enable     => UART_Interface_TX_Enable,
+        TX_Busy       => UART_Interface_TX_Busy,
+        TX_Data       => UART_Interface_TX_Data,
+        RX_Busy       => UART_Interface_RX_Busy,
+        RX_Data       => UART_Interface_RX_Data,
+        RX_Error      => UART_Interface_RX_Error,
+    );
+    
+    NewComponent Ultrasonic_Controller
+    (
+        CLK_Frequency    => 12000000,
+        Update_Frequency => 15,
+        
+        Reset            => '0',
+        Trigger          => Trigger,
+        Echo             => Echo,
+        Dist             => Ultrasonic_Controller_Dist,
+    );
+    
+    Process ()
+    {
+        Thread
+        {
+            if(LastButton /= BTN)
+            {
+                LastButton <= BTN;
+                if(BTN = '1')
+                {
+                    if(not EnableDistance)
+                    {
+                        NewFunction assignString (s"Distance measuring enabled!\n", sendEnabledMessage);
+                        NewFunction printString (sendEnabledMessage, UART_Interface_TX_Data, UART_Interface_TX_Busy, UART_Interface_TX_Enable);
+                        
+                        Wait(50ms);
+                        EnableDistance <= true;
+                    }
+                    else
+                    {
+                        EnableDistance <= false;
+                        Wait(50ms);                        
+                        
+                        NewFunction assignString (s"Distance measuring disabled!\n", sendDisabledMessage);
+                        NewFunction printString (sendDisabledMessage, UART_Interface_TX_Data, UART_Interface_TX_Busy, UART_Interface_TX_Enable);
+                    }
+                }
+            }
+        }
+        
+        Thread
+        {
+            if(EnableDistance)
+            {
+                --Create string for received data
+                NewFunction newString (receive_string); --Create RAM for string
+                --Create string for final response
+                NewFunction newString (transmit_string);
+                
+                
+                --Convert distance to string
+                NewFunction naturalToStringInst (Ultrasonic_Controller_Dist, receive_string, BCD_Enable, BCD_Busy, BCD_Binary, BCD_Decimal);
+                NewFunction assignString (s"Distance: ", sendChanged);
+                NewFunction stringConcat (sendChanged, receive_string, transmit_string);
+                NewFunction charAppend (s"\n", transmit_string);
+                
+                --Send combined string
+                NewFunction printString (transmit_string, UART_Interface_TX_Data, UART_Interface_TX_Busy, UART_Interface_TX_Enable);
+                
+                led <= '1';
+                Wait(500ms);
+                led <= '0';
+                Wait(500ms);
+            }
+        }
+    }
+}
