@@ -1,13 +1,13 @@
-Main 
+Main
 (
     led           : OUT STD_LOGIC := '0';
-    RX            : IN  STD_LOGIC; 
+    RX            : IN  STD_LOGIC;
     TX            : OUT STD_LOGIC;
     Trigger          : OUT STD_LOGIC;
     Echo             : IN STD_LOGIC;
     BTN : IN STD_LOGIC;
-)       
-{   
+)
+{
     SIGNAL Ultrasonic_Controller_Dist             : NATURAL   range 0 to 1000;
     SIGNAL UART_Interface_TX_Enable     : STD_LOGIC;
     SIGNAL UART_Interface_TX_Busy       : STD_LOGIC;
@@ -58,7 +58,7 @@ Main
                     {
                         NewFunction assignString (s"Distance measuring enabled!\n", sendEnabledMessage);
                         NewFunction printString (sendEnabledMessage, UART_Interface_TX_Data, UART_Interface_TX_Busy, UART_Interface_TX_Enable);
-                                             
+                        
                         EnableDistance <= true;
                         Wait(100ms);
                     }

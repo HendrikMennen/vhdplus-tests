@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <ProjectRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Header>SerialUltra</Header>
+  <Header>SerialMatrix</Header>
   <fileWatcherIgnore />
   <Items xsi:type="ProjectFolder">
     <Header>Generated</Header>
@@ -12,7 +12,13 @@
       <Header>BinaryToBcdDigit.vhd</Header>
     </Items>
     <Items xsi:type="ProjectFile">
-      <Header>SerialUltra.vhd</Header>
+      <Header>LED_Matrix.vhd</Header>
+    </Items>
+    <Items xsi:type="ProjectFile">
+      <Header>LED_Matrix_Text.vhd</Header>
+    </Items>
+    <Items xsi:type="ProjectFile">
+      <Header>SerialMatrix.vhd</Header>
     </Items>
     <Items xsi:type="ProjectFile">
       <Header>Single_Port_RAM.vhd</Header>
@@ -21,13 +27,13 @@
       <Header>Single_Port_ROM.vhd</Header>
     </Items>
     <Items xsi:type="ProjectFile">
+      <Header>SPI_Master.vhd</Header>
+    </Items>
+    <Items xsi:type="ProjectFile">
       <Header>String_Type_Package.vhd</Header>
     </Items>
     <Items xsi:type="ProjectFile">
       <Header>UART_Interface.vhd</Header>
-    </Items>
-    <Items xsi:type="ProjectFile">
-      <Header>Ultrasonic_Controller.vhd</Header>
     </Items>
   </Items>
   <Items xsi:type="ProjectFolder">
@@ -40,10 +46,19 @@
       <Header>BinaryToBcdDigit.vhdp</Header>
     </Items>
     <Items xsi:type="ProjectFileVHDP">
+      <Header>LED_Matrix.vhdp</Header>
+    </Items>
+    <Items xsi:type="ProjectFileVHDP">
+      <Header>LED_Matrix_Text.vhdp</Header>
+    </Items>
+    <Items xsi:type="ProjectFileVHDP">
       <Header>Single-Port_RAM.vhdp</Header>
     </Items>
     <Items xsi:type="ProjectFileVHDP">
       <Header>Single-Port_ROM.vhdp</Header>
+    </Items>
+    <Items xsi:type="ProjectFileVHDP">
+      <Header>SPI_Master.vhdp</Header>
     </Items>
     <Items xsi:type="ProjectFileVHDP">
       <Header>String_Functions.vhdp</Header>
@@ -54,11 +69,11 @@
     <Items xsi:type="ProjectFileVHDP">
       <Header>UART.vhdp</Header>
     </Items>
-    <Items xsi:type="ProjectFileVHDP">
-      <Header>Ultrasonic.vhdp</Header>
-    </Items>
+  </Items>
+  <Items xsi:type="ProjectFile">
+    <Header>.gitignore</Header>
   </Items>
   <Items xsi:type="ProjectFileVHDP">
-    <Header>SerialUltra.vhdp</Header>
+    <Header>SerialMatrix.vhdp</Header>
   </Items>
 </ProjectRoot>
