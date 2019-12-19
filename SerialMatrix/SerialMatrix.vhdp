@@ -112,26 +112,9 @@ Main
             
             NewFunction readString (receive_string, UART_Interface_RX_Data, UART_Interface_RX_Busy);
             
-            --LED_Matrix_Text_Text <= std_logic_vector(resize(unsigned(receive_string), receive_string.Length));
+            NewFunction stringToVector (receive_string, LED_Matrix_Text_Text'LENGTH/8, LED_Matrix_Text_Text);
             
-            NewFunction printString (receive_string, UART_Interface_RX_Data, UART_Interface_TX_Busy, UART_Interface_TX_Enable);
-        }
-    }
-    
-    StepFunction stringToVector
-    (
-        iString : String_Type;
-        oVector : STD_LOGIC_VECTOR;
-    )
-    {
-        iString.Write <= '0';
-        StepFor(VARIABLE StV_i : INTEGER := 0; StV_i < iString.Length; StV_i := StV_i + 1)
-        {
-            iString.Address <= StV_i;
-            Step
-            {
-                oVector((iString.Length-StV_i)*8-1 downto (iString.Length-StV_i-1)*8) <= iString.Data_OUT;
-            }
+            NewFunction printString (receive_string, UART_Interface_TX_Data, UART_Interface_TX_Busy, UART_Interface_TX_Enable);
         }
     }
 }

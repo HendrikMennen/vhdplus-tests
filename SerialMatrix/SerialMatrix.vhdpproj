@@ -3,6 +3,40 @@
   <Header>SerialMatrix</Header>
   <fileWatcherIgnore />
   <Items xsi:type="ProjectFolder">
+    <Header>Generated</Header>
+    <fileWatcherIgnore />
+    <Items xsi:type="ProjectFile">
+      <Header>BinaryToBcd.vhd</Header>
+    </Items>
+    <Items xsi:type="ProjectFile">
+      <Header>BinaryToBcdDigit.vhd</Header>
+    </Items>
+    <Items xsi:type="ProjectFile">
+      <Header>LED_Matrix.vhd</Header>
+    </Items>
+    <Items xsi:type="ProjectFile">
+      <Header>LED_Matrix_Text.vhd</Header>
+    </Items>
+    <Items xsi:type="ProjectFile">
+      <Header>SerialMatrix.vhd</Header>
+    </Items>
+    <Items xsi:type="ProjectFile">
+      <Header>Single_Port_RAM.vhd</Header>
+    </Items>
+    <Items xsi:type="ProjectFile">
+      <Header>Single_Port_ROM.vhd</Header>
+    </Items>
+    <Items xsi:type="ProjectFile">
+      <Header>SPI_Master.vhd</Header>
+    </Items>
+    <Items xsi:type="ProjectFile">
+      <Header>String_Type_Package.vhd</Header>
+    </Items>
+    <Items xsi:type="ProjectFile">
+      <Header>UART_Interface.vhd</Header>
+    </Items>
+  </Items>
+  <Items xsi:type="ProjectFolder">
     <Header>Libraries</Header>
     <fileWatcherIgnore />
     <Items xsi:type="ProjectFileVHDP">
@@ -35,9 +69,6 @@
     <Items xsi:type="ProjectFileVHDP">
       <Header>UART.vhdp</Header>
     </Items>
-  </Items>
-  <Items xsi:type="ProjectFile">
-    <Header>.gitignore</Header>
   </Items>
   <Items xsi:type="ProjectFileVHDP">
     <Header>SerialMatrix.vhdp</Header>
