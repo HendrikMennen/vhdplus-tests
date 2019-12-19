@@ -115,7 +115,7 @@ Main
             
             NewFunction readString (receive_string, UART_Interface_RX_Data, UART_Interface_RX_Busy);
             
-            NewFunction stringToVector (receive_string, LED_Matrix_Text_Text'LENGTH/8, LED_Matrix_Text_Text);
+            NewFunction stringToVector (receive_string, LED_Matrix_Text_Text);
             
             LED_Matrix_Text_Length <= receive_string.Length;
             
