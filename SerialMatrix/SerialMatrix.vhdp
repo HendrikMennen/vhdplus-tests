@@ -9,23 +9,26 @@ Main
     TX            : OUT STD_LOGIC;
 )
 {
-    SIGNAL LED_Matrix_Text_Text          : STD_LOGIC_VECTOR ((10*8)-1 downto 0);
-    SIGNAL LED_Matrix_Text_Text_Length   : NATURAL          range 0 to 10;
-    SIGNAL LED_Matrix_Text_Set_Text      : STD_LOGIC;
-    SIGNAL LED_Matrix_Text_Scroll        : STD_LOGIC;
-    SIGNAL LED_Matrix_Text_Text_Matrix   : LED_Matrix_Array ((4*8)-1 downto 0);
-    SIGNAL LED_Matrix_Text_Text_En       : STD_LOGIC;
+    CONSTANT Panels                : NATURAL := 4;
+    CONSTANT MaxChars              : NATURAL := 12;
+    SIGNAL LED_Matrix_Config       : STD_LOGIC := '1';
+    SIGNAL LED_Matrix_Panel_Bitmap : LED_Matrix_Array ((panels*8)-1 downto 0);
+    SIGNAL LED_Matrix_Update       : STD_LOGIC := '0';
+    SIGNAL LED_Matrix_Text_Text    : STD_LOGIC_VECTOR ((maxChars*8)-1 downto 0) := x"564844506c75732e636f6d20";
+    SIGNAL LED_Matrix_Text_Length  : NATURAL          range 0 to maxChars := 12;
+    SIGNAL LED_Matrix_Set_Text     : STD_LOGIC;
+    
+    SIGNAL LED_Matrix_Text_Text_Matrix : LED_Matrix_Array ((panels*8)-1 downto 0);
+    SIGNAL LED_Matrix_Text_Text_En     : STD_LOGIC;
+    
     SIGNAL UART_Interface_TX_Enable     : STD_LOGIC;
     SIGNAL UART_Interface_TX_Busy       : STD_LOGIC;
     SIGNAL UART_Interface_TX_Data       : STD_LOGIC_VECTOR (8-1 DOWNTO 0);
     SIGNAL UART_Interface_RX_Busy       : STD_LOGIC;
     SIGNAL UART_Interface_RX_Data       : STD_LOGIC_VECTOR (8-1 DOWNTO 0);
     SIGNAL UART_Interface_RX_Error      : STD_LOGIC;
-    SIGNAL LED_Matrix_Panel_Bitmap  : LED_Matrix_Array ((4*8)-1 downto 0);
-    SIGNAL LED_Matrix_Update        : STD_LOGIC;
-    SIGNAL LED_Matrix_Brightness    : NATURAL          range 0 to 15;
-    SIGNAL LED_Matrix_Shutdown      : STD_LOGIC;
-    SIGNAL LED_Matrix_Config        : STD_LOGIC;
+    
+    SIGNAL Reset : STD_LOGIC := '0';
     
     NewComponent LED_Matrix
     (
@@ -40,8 +43,8 @@ Main
         DIN_O         => DIN_O,
         Panel_Bitmap  => LED_Matrix_Panel_Bitmap,
         Update        => LED_Matrix_Update,
-        Brightness    => LED_Matrix_Brightness,
-        Shutdown      => LED_Matrix_Shutdown,
+        Brightness    => 4,
+        Shutdown      => '0',
         Config        => LED_Matrix_Config,
     );
     
@@ -68,15 +71,15 @@ Main
     NewComponent LED_Matrix_Text
     (
         CLK_Frequency => 12000000,
-        Panels        => 4,
-        MaxChars      => 10,
-        ScrollSpeed   => 5,
-        
-        Reset         => '0',
+        Panels        => Panels,
+        MaxChars      => MaxChars,
+        ScrollSpeed   => 10,
+
+        Reset         => Reset,
         Text          => LED_Matrix_Text_Text,
-        Text_Length   => LED_Matrix_Text_Text_Length,
-        Set_Text      => LED_Matrix_Text_Set_Text,
-        Scroll        => LED_Matrix_Text_Scroll,
+        Text_Length   => LED_Matrix_Text_Length,
+        Set_Text      => LED_Matrix_Set_Text,
+        Scroll        => '1',
         Text_Matrix   => LED_Matrix_Text_Text_Matrix,
         Text_En       => LED_Matrix_Text_Text_En,
     );
@@ -95,15 +98,15 @@ Main
             Step{ LED_Matrix_Config <= '0'; }
             Wait(10ms);
             
-            LED_Matrix_Text_Set_Text     <= '0';
+            LED_Matrix_Set_Text     <= '0';
             While(Button = '0')  --While button not pressed -> show text
             {
-                LED_Matrix_Text_Set_Text     <= '1';
+                LED_Matrix_Set_Text     <= '1';
             }
             Wait(10ms);
             While(Button = '1'){}
             Wait(10ms);
-            LED_Matrix_Text_Set_Text     <= '0'; --Repeat everything after button released
+            LED_Matrix_Set_Text     <= '0'; --Repeat everything after button released
         }
         
         Thread
@@ -113,6 +116,8 @@ Main
             NewFunction readString (receive_string, UART_Interface_RX_Data, UART_Interface_RX_Busy);
             
             NewFunction stringToVector (receive_string, LED_Matrix_Text_Text'LENGTH/8, LED_Matrix_Text_Text);
+            
+            LED_Matrix_Text_Length <= receive_string.Length;
             
             NewFunction printString (receive_string, UART_Interface_TX_Data, UART_Interface_TX_Busy, UART_Interface_TX_Enable);
         }
