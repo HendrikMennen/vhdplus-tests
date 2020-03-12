@@ -1,0 +1,59 @@
+Component SerialUltra_tb()
+{
+    SIGNAL finished : STD_LOGIC:= '0';
+    CONSTANT period_time : TIME := 83333 ps;
+
+    Process Sim_finished()
+    {
+        wait for 5 s;
+        finished <= '1';
+        wait;
+    }
+
+    NewComponent SerialUltra
+    (
+        led => led,
+        RX => RX,
+        TX => TX,
+        Trigger => Trigger,
+        Echo => Echo,
+        BTN => BTN,
+        CLK => CLK,
+    );
+
+    SIGNAL led : STD_LOGIC  := '0';
+    SIGNAL RX : STD_LOGIC ;
+    SIGNAL TX : STD_LOGIC ;
+    SIGNAL Trigger : STD_LOGIC ;
+    SIGNAL Echo : STD_LOGIC ;
+    SIGNAL BTN : STD_LOGIC ;
+    SIGNAL CLK : STD_LOGIC := '0';
+
+
+    Process Sim_BTN()
+    {
+        While(finished /= '1')
+        {
+            BTN <= '0';
+            wait for 100 ms;
+            BTN <= '1';
+            wait for 100 ms;
+            BTN <= '0';
+            wait for 100 ms;
+            wait;
+        }
+        wait;
+    }
+
+    Process Sim_CLK()
+    {
+        While(finished /= '1')
+        {
+            CLK <= '0';
+            wait for period_time/2;
+            CLK <= '1';
+            wait for period_time/2;
+        }
+        wait;
+    }
+}

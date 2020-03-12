@@ -61,4 +61,7 @@
   <Items xsi:type="ProjectFileVHDP">
     <Header>SerialUltra.vhdp</Header>
   </Items>
+  <Items xsi:type="ProjectFileGHDP">
+    <Header>SerialUltraSim.ghdp</Header>
+  </Items>
 </ProjectRoot>
