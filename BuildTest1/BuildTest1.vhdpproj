@@ -7,9 +7,6 @@
       <Header>BuildTest1.vhd</Header>
     </Items>
   </Items>
-  <Items xsi:type="ProjectFile">
-    <Header>.gitignore</Header>
-  </Items>
   <Items xsi:type="ProjectFileVHDP">
     <Header>BuildTest1.vhdp</Header>
   </Items>
