@@ -3,11 +3,22 @@
   <Header>BuildTest1</Header>
   <Items xsi:type="ProjectFolder">
     <Header>Generated</Header>
-    <Items xsi:type="ProjectFile">
+    <Items xsi:type="ProjectFileVHDL">
       <Header>BuildTest1.vhd</Header>
+    </Items>
+  </Items>
+  <Items xsi:type="ProjectFolder">
+    <Header>Libraries</Header>
+    <Items xsi:type="ProjectFileVHDP">
+      <Header>String_Functions.vhdp</Header>
+    </Items>
+    <Items xsi:type="ProjectFileVHDP">
+      <Header>String_Type.vhdp</Header>
     </Items>
   </Items>
   <Items xsi:type="ProjectFileVHDP">
     <Header>BuildTest1.vhdp</Header>
   </Items>
+  <SelectedExtensionsSave />
+  <IOVoltage>0</IOVoltage>
 </ProjectRoot>
