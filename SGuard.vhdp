@@ -547,6 +547,8 @@ Main
                     state       := '0';
                     
                     us_ena := '1';
+                    
+                    Test
                 }
             }
             btn_prev := (NOT btn) OR alarm;
@@ -602,10 +604,6 @@ Main
                             start_turn                   := '0';
                         }
                     }
-                    Elsif(stop = '0' AND (Motor_Controller_Driven_L > abs(Motor_Controller_Drive_L)-stop_length OR Motor_Controller_Driven_R > abs(Motor_Controller_Drive_R)-stop_length) AND (abs(Route_L(route_step)) > min_length OR abs(Route_R(route_step)) > min_length))
-                    {
-                        stop        := '1';
-                    }
                     Elsif(stop = '0' AND Motor_Controller_Driven_L < start_length)
                     {
                         init_speed := (Route_Speed(route_step-1) - (start_length - Motor_Controller_Driven_L)/speed_divider);
@@ -657,7 +655,7 @@ Main
                 
                 If(speed < min_speed)
                 {
-                    Motor_Controller_Drive_Speed <= min_speed;
+                    Motor_Controller_Drive_Speed >= min_speed;
                 }
                 Else
                 {
