@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<ProjectRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Header>GitTest</Header>
+  <Items xsi:type="ProjectFolder">
+    <Header>TestOrdner</Header>
+    <Items xsi:type="ProjectFileVHDP">
+      <Header>TestDatei.vhdp</Header>
+    </Items>
+  </Items>
+  <Items xsi:type="ProjectFileVHDP">
+    <Header>GitTest.vhdp</Header>
+  </Items>
+  <Items xsi:type="ProjectFileVHDP">
+    <Header>SGuard.vhdp</Header>
+  </Items>
+  <SelectedExtensionsSave />
+  <IOVoltage>0</IOVoltage>
+</ProjectRoot>
