@@ -13,5 +13,15 @@ Main
             Wait(250ms);
             --Git test 2
         }
+        
+        
+        Thread
+        {            
+            led = '1';            
+        }
+        
+        
+        kjlksjlkflsd
+        
     }
 }
