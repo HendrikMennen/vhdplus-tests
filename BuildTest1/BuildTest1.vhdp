@@ -13,6 +13,8 @@ Main
         Thread
         {
             NewFunction newString ([oString]);
+            
+            Change something
         }
         
         
