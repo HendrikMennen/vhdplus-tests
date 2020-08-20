@@ -7,7 +7,7 @@ Main
     {
         Thread
         {
-            led <= '0';
+            aa bb cc aa
             Wait(250ms);
             led <= '1';
             Wait(250ms);
