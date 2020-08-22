@@ -1,6 +1,7 @@
 Main
 (
     led : OUT STD_LOGIC := '0';
+    Hi  : OUT STD_LOGIC_VECTOR (7 downto 0) := (others => '0');
 )
 {
     Process()
