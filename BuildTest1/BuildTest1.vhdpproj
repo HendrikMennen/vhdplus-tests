@@ -7,8 +7,20 @@
       <Header>BuildTest1.vhd</Header>
     </Items>
   </Items>
+  <Items xsi:type="ProjectFolder">
+    <Header>Illegal Name</Header>
+  </Items>
   <Items xsi:type="ProjectFileVHDP">
     <Header>BuildTest1.vhdp</Header>
+  </Items>
+  <Items xsi:type="ProjectFileGHDP">
+    <Header>geier.ghdp</Header>
+  </Items>
+  <Items xsi:type="ProjectFile">
+    <Header>cpptest.cpp</Header>
+  </Items>
+  <Items xsi:type="ProjectFile">
+    <Header>csharptest.cs</Header>
   </Items>
   <SelectedExtensionsSave />
   <IOVoltage>0</IOVoltage>

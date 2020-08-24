@@ -10,7 +10,7 @@ Main
             led <= '0';
             Wait(250ms);
             led <= '1';
-            Wait(250ms);
+            Wait(250ms); 
         }
     }
 }
