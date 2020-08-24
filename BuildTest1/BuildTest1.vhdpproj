@@ -3,9 +3,6 @@
   <Header>BuildTest1</Header>
   <Items xsi:type="ProjectFolder">
     <Header>Generated</Header>
-    <Items xsi:type="ProjectFileVHDL">
-      <Header>BuildTest1.vhd</Header>
-    </Items>
   </Items>
   <Items xsi:type="ProjectFolder">
     <Header>Illegal Name</Header>
@@ -14,13 +11,16 @@
     <Header>BuildTest1.vhdp</Header>
   </Items>
   <Items xsi:type="ProjectFileGHDP">
-    <Header>geier.ghdp</Header>
+    <Header>geierino.ghdp</Header>
+  </Items>
+  <Items xsi:type="ProjectFile">
+    <Header>header.h</Header>
+  </Items>
+  <Items xsi:type="ProjectFile">
+    <Header>ctest.c</Header>
   </Items>
   <Items xsi:type="ProjectFile">
     <Header>cpptest.cpp</Header>
-  </Items>
-  <Items xsi:type="ProjectFile">
-    <Header>csharptest.cs</Header>
   </Items>
   <SelectedExtensionsSave />
   <IOVoltage>0</IOVoltage>
