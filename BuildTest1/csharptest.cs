@@ -1,5 +1,12 @@
-static int Main(string[] args)
+using System;
+
+namespace HelloWorld
 {
-    //...
-    return 0;
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");    
+        }
+    }
 }
