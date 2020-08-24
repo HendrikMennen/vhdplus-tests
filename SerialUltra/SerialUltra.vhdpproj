@@ -1,38 +1,35 @@
 <?xml version="1.0"?>
 <ProjectRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Header>SerialUltra</Header>
-  <fileWatcherIgnore />
   <Items xsi:type="ProjectFolder">
     <Header>Generated</Header>
-    <fileWatcherIgnore />
-    <Items xsi:type="ProjectFile">
+    <Items xsi:type="ProjectFileVHDL">
       <Header>BinaryToBcd.vhd</Header>
     </Items>
-    <Items xsi:type="ProjectFile">
+    <Items xsi:type="ProjectFileVHDL">
       <Header>BinaryToBcdDigit.vhd</Header>
     </Items>
-    <Items xsi:type="ProjectFile">
+    <Items xsi:type="ProjectFileVHDL">
       <Header>SerialUltra.vhd</Header>
     </Items>
-    <Items xsi:type="ProjectFile">
+    <Items xsi:type="ProjectFileVHDL">
       <Header>Single_Port_RAM.vhd</Header>
     </Items>
-    <Items xsi:type="ProjectFile">
+    <Items xsi:type="ProjectFileVHDL">
       <Header>Single_Port_ROM.vhd</Header>
     </Items>
-    <Items xsi:type="ProjectFile">
+    <Items xsi:type="ProjectFileVHDL">
       <Header>String_Type_Package.vhd</Header>
     </Items>
-    <Items xsi:type="ProjectFile">
+    <Items xsi:type="ProjectFileVHDL">
       <Header>UART_Interface.vhd</Header>
     </Items>
-    <Items xsi:type="ProjectFile">
+    <Items xsi:type="ProjectFileVHDL">
       <Header>Ultrasonic_Controller.vhd</Header>
     </Items>
   </Items>
   <Items xsi:type="ProjectFolder">
     <Header>Libraries</Header>
-    <fileWatcherIgnore />
     <Items xsi:type="ProjectFileVHDP">
       <Header>BinaryToBcd.vhdp</Header>
     </Items>
@@ -64,4 +61,6 @@
   <Items xsi:type="ProjectFileGHDP">
     <Header>SerialUltraSim.ghdp</Header>
   </Items>
+  <SelectedExtensionsSave />
+  <IOVoltage>0</IOVoltage>
 </ProjectRoot>

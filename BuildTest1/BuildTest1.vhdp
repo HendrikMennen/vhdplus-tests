@@ -1,8 +1,3 @@
-/*
-Better Teamwork with our new inbuild Team Explorer.
-Use the power of git comfortably inside VHDPlus IDE!
-*/
-
 Main
 (
     led : OUT STD_LOGIC := '0';
@@ -11,20 +6,13 @@ Main
     Process()
     {
         Thread
-        {
-            NewFunction newString ([oString]);
-            
-            Change something
+        
+            led <= '0';
+            Wait(250ms);
+            led <= '1';
+            Wait(250ms)
         }
         
-        
-        Thread
-        {            
-            led = '1';            
-        }
-        
-        
-        kjlksjlkflsd
-        
+        ---GEIER
     }
 }

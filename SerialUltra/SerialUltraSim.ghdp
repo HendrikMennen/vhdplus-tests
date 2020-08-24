@@ -5,7 +5,7 @@ Component SerialUltra_tb()
 
     Process Sim_finished()
     {
-        wait for 5 s;
+        wait for 100000 us;
         finished <= '1';
         wait;
     }
@@ -30,16 +30,28 @@ Component SerialUltra_tb()
     SIGNAL CLK : STD_LOGIC := '0';
 
 
+    Process Sim_RX()
+    {
+        While(finished /= '1')
+        {
+            wait;
+        }
+        wait;
+    }
+
+    Process Sim_Echo()
+    {
+        While(finished /= '1')
+        {
+            wait;
+        }
+        wait;
+    }
+
     Process Sim_BTN()
     {
         While(finished /= '1')
         {
-            BTN <= '0';
-            wait for 100 ms;
-            BTN <= '1';
-            wait for 100 ms;
-            BTN <= '0';
-            wait for 100 ms;
             wait;
         }
         wait;
