@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<ProjectRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Header>NiceProject</Header>
+  <Items xsi:type="ProjectFileVHDP">
+    <Header>NiceProject.vhdp</Header>
+  </Items>
+  <SelectedExtensionsSave />
+  <IOVoltage>0</IOVoltage>
+</ProjectRoot>
