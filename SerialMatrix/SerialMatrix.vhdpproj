@@ -1,44 +1,41 @@
 <?xml version="1.0"?>
 <ProjectRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Header>SerialMatrix</Header>
-  <fileWatcherIgnore />
   <Items xsi:type="ProjectFolder">
     <Header>Generated</Header>
-    <fileWatcherIgnore />
-    <Items xsi:type="ProjectFile">
+    <Items xsi:type="ProjectFileVHDL">
       <Header>BinaryToBcd.vhd</Header>
     </Items>
-    <Items xsi:type="ProjectFile">
+    <Items xsi:type="ProjectFileVHDL">
       <Header>BinaryToBcdDigit.vhd</Header>
     </Items>
-    <Items xsi:type="ProjectFile">
+    <Items xsi:type="ProjectFileVHDL">
       <Header>LED_Matrix.vhd</Header>
     </Items>
-    <Items xsi:type="ProjectFile">
+    <Items xsi:type="ProjectFileVHDL">
       <Header>LED_Matrix_Text.vhd</Header>
     </Items>
-    <Items xsi:type="ProjectFile">
+    <Items xsi:type="ProjectFileVHDL">
       <Header>SerialMatrix.vhd</Header>
     </Items>
-    <Items xsi:type="ProjectFile">
+    <Items xsi:type="ProjectFileVHDL">
       <Header>Single_Port_RAM.vhd</Header>
     </Items>
-    <Items xsi:type="ProjectFile">
+    <Items xsi:type="ProjectFileVHDL">
       <Header>Single_Port_ROM.vhd</Header>
     </Items>
-    <Items xsi:type="ProjectFile">
+    <Items xsi:type="ProjectFileVHDL">
       <Header>SPI_Master.vhd</Header>
     </Items>
-    <Items xsi:type="ProjectFile">
+    <Items xsi:type="ProjectFileVHDL">
       <Header>String_Type_Package.vhd</Header>
     </Items>
-    <Items xsi:type="ProjectFile">
+    <Items xsi:type="ProjectFileVHDL">
       <Header>UART_Interface.vhd</Header>
     </Items>
   </Items>
   <Items xsi:type="ProjectFolder">
     <Header>Libraries</Header>
-    <fileWatcherIgnore />
     <Items xsi:type="ProjectFileVHDP">
       <Header>BinaryToBcd.vhdp</Header>
     </Items>
@@ -73,4 +70,6 @@
   <Items xsi:type="ProjectFileVHDP">
     <Header>SerialMatrix.vhdp</Header>
   </Items>
+  <SelectedExtensionsSave />
+  <IOVoltage>0</IOVoltage>
 </ProjectRoot>
