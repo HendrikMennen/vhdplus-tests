@@ -21,13 +21,6 @@ Main
     SIGNAL LED_Matrix_Text_Text_Matrix : LED_Matrix_Array ((panels*8)-1 downto 0);
     SIGNAL LED_Matrix_Text_Text_En     : STD_LOGIC;
     
-    SIGNAL UART_Interface_TX_Enable     : STD_LOGIC;
-    SIGNAL UART_Interface_TX_Busy       : STD_LOGIC;
-    SIGNAL UART_Interface_TX_Data       : STD_LOGIC_VECTOR (8-1 DOWNTO 0);
-    SIGNAL UART_Interface_RX_Busy       : STD_LOGIC;
-    SIGNAL UART_Interface_RX_Data       : STD_LOGIC_VECTOR (8-1 DOWNTO 0);
-    SIGNAL UART_Interface_RX_Error      : STD_LOGIC;
-    
     SIGNAL Reset : STD_LOGIC := '0';
     
     NewComponent LED_Matrix
