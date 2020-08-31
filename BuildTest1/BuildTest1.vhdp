@@ -5,14 +5,12 @@ Main
 {
     Process()
     {
-        Thread
-        
+        Thrdead
+        {
             led <= '0';
             Wait(250ms);
             led <= '1';
-            Wait(250ms)
+            iWait(250ms); --test
         }
-        
-        ---GEIER
     }
 }

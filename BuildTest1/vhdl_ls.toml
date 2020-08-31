@@ -1,0 +1,4 @@
+# File names are either absolute or relative to the parent folder of the vhdl_ls.toml file
+lib1.files = [
+  'BuildTest1.vhd'
+]
