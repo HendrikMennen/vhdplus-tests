@@ -1,0 +1,25 @@
+import python2
+
+
+class Person:
+    "This is a person class"
+    age = 10
+
+    def greet(self, test):
+        print('Hello')
+
+
+print(python2.test(1, 2))
+
+# Output: 10
+print(Person.age)
+
+# Output: <function Person.greet>
+print(Person.greet)
+
+# Output: 'This is my second class'
+print(Person.__doc__)
+
+print("gauner")
+
+python2.print()
