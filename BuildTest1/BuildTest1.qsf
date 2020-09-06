@@ -20,8 +20,8 @@ set_global_assignment -name TOP_LEVEL_ENTITY BuildTest1
   
 set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
 set_global_assignment -name NUM_PARALLEL_PROCESSORS 12
-set_global_assignment -name INTERNAL_FLASH_UPDATE_MODE "SINGLE IMAGE WITH ERAM"
 set_global_assignment -name VHDL_FILE Generated/BuildTest1.vhd
+set_global_assignment -name VHDL_FILE Generated/Input_Debouncer.vhd
 set_location_assignment PIN_D13 -to led
 set_location_assignment PIN_H6 -to CLK
 set_location_assignment PIN_H1 -to VS[0]

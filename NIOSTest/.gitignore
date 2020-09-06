@@ -7,3 +7,11 @@ db/
 ## Quartus specific.
 ## *.qsf
 ## *.qpf
+
+## NIOS
+NIOSDuino_Core.sopcinfo
+Software/NIOSDuino_bsp
+Software/NIOSDuino/obj
+*.map
+*.objdump
+*.elf
