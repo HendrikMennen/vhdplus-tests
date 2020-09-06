@@ -2,6 +2,9 @@
 <ProjectRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Header>C++Test</Header>
   <Items xsi:type="ProjectFolder">
+    <Header>Generated</Header>
+  </Items>
+  <Items xsi:type="ProjectFolder">
     <Header>Header</Header>
     <Items xsi:type="ProjectFile">
       <Header>test.cpp</Header>

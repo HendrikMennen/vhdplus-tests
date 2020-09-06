@@ -2,6 +2,9 @@
 <ProjectRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Header>PythonTest</Header>
   <Items xsi:type="ProjectFile">
+    <Header>importtest.py</Header>
+  </Items>
+  <Items xsi:type="ProjectFile">
     <Header>mai.py</Header>
   </Items>
   <Items xsi:type="ProjectFile">

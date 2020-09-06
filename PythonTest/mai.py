@@ -1,6 +1,10 @@
 import python2
 
 
+class Test2(object):
+    pass
+
+
 class Person:
     "This is a person class"
     age = 10

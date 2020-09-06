@@ -3,14 +3,26 @@ Main
     led : OUT STD_LOGIC := '0';
 )
 {
+    SIGNAL Input_Debouncer_Inputs       : STD_LOGIC_VECTOR (1-1 downto 0);
+    SIGNAL Input_Debouncer_Outputs      : STD_LOGIC_VECTOR (1-1 downto 0);
+    
     Process()
     {
-        Thrdead
+        Thread
         {
             led <= '0';
             Wait(250ms);
             led <= '1';
-            iWait(250ms); --test
+            Wait(250ms);
         }
     }
+    
+    NewComponent Input_Debouncer 
+    (
+        Counter_Size => 19,
+        Input_Number => 1,
+    
+        Inputs       => Input_Debouncer_Inputs,
+        Outputs      => Input_Debouncer_Outputs,
+    );
 }
