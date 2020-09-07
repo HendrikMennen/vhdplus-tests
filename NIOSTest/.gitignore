@@ -15,3 +15,5 @@ Software/NIOSDuino/obj
 *.map
 *.objdump
 *.elf
+.clangd
+*.sopcinfo
