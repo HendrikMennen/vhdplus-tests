@@ -174,15 +174,15 @@
         </Items>
       </Items>
       <Items xsi:type="ProjectFile">
-        <Header>compile_commands.json</Header>
-      </Items>
-      <Items xsi:type="ProjectFile">
         <Header>NIOSDuino.cpp</Header>
       </Items>
     </Items>
   </Items>
   <Items xsi:type="ProjectFileVHDP">
     <Header>NIOSTest.vhdp</Header>
+  </Items>
+  <Items xsi:type="ProjectFile">
+    <Header>test.cpp</Header>
   </Items>
   <SelectedExtensionsSave />
   <IOVoltage>0</IOVoltage>
