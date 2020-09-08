@@ -10,5 +10,5 @@ void loop() {
     Serial.println(i);
     delay(1000);
     i++;
-    if(i > 10) i = 0;
+    if(i > 5) i = 0;
 }
