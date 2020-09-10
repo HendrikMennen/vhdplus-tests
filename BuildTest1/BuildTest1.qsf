@@ -18,7 +18,7 @@ set_global_assignment -name TOP_LEVEL_ENTITY BuildTest1
     set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
     set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
   
-set_global_assignment -name LAST_QUARTUS_VERSION "20.1.0 Lite Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
 set_global_assignment -name NUM_PARALLEL_PROCESSORS 12
 set_global_assignment -name VHDL_FILE Generated/BuildTest1.vhd
 set_global_assignment -name VHDL_FILE Generated/Input_Debouncer.vhd

@@ -1,78 +1,47 @@
 Main
 (
-    --NIOSDuino Onboard
-
-    Reset                      : IN    STD_LOGIC := 'X';
+    Reset         : IN STD_LOGIC;
+    sdram_addr    : OUT STD_LOGIC_VECTOR (11 downto 0);
+    sdram_ba      : OUT STD_LOGIC_VECTOR (1 downto 0);
+    sdram_cas_n   : OUT STD_LOGIC;
+    sdram_dq      : INOUT STD_LOGIC_VECTOR (15 downto 0);
+    sdram_dqm     : OUT STD_LOGIC_VECTOR (1 downto 0);
+    sdram_ras_n   : OUT STD_LOGIC;
+    sdram_we_n    : OUT STD_LOGIC;
+    sdram_clk_clk : OUT STD_LOGIC;
+    pio_export    : INOUT STD_LOGIC_VECTOR (15 downto 0);
+    pwm_out       : OUT STD_LOGIC_VECTOR (3 downto 0);
+    uart_rxd      : IN STD_LOGIC;
+    uart_txd      : OUT STD_LOGIC;
+    i2c_sda       : INOUT STD_LOGIC;
+    i2c_scl       : INOUT STD_LOGIC;
+    spi_MISO      : IN STD_LOGIC;
+    spi_MOSI      : OUT STD_LOGIC;
+    spi_SCLK      : OUT STD_LOGIC;
+    spi_SS_n      : OUT STD_LOGIC;
     
-    sdram_addr                 : OUT   STD_LOGIC_VECTOR(11 downto 0);
-    sdram_ba                   : OUT   STD_LOGIC_VECTOR(1 downto 0);
-    sdram_cas_n                : OUT   STD_LOGIC;
-    sdram_dq                   : INOUT STD_LOGIC_VECTOR(15 downto 0) := (others => 'X');
-    sdram_dqm                  : OUT   STD_LOGIC_VECTOR(1 downto 0);
-    sdram_ras_n                : OUT   STD_LOGIC;
-    sdram_we_n                 : OUT   STD_LOGIC;
-    sdram_clk_clk              : OUT   STD_LOGIC;
-    
-    spi_flash_MISO             : IN    STD_LOGIC := '0';
-    spi_flash_MOSI             : OUT   STD_LOGIC;
-    spi_flash_SCLK             : OUT   STD_LOGIC;
-    spi_flash_SS_n             : OUT   STD_LOGIC;
-    
-                --NIOSDuino External
-    
-    pio_export                 : INOUT STD_LOGIC_VECTOR(15 downto 0) := (others => 'X');
-    
-    pwm_out                    : OUT   STD_LOGIC_VECTOR(3 downto 0);
-    
-    uart_rxd                   : IN    STD_LOGIC := 'X';
-    uart_txd                   : OUT   STD_LOGIC;
-    
-    i2c_sda                    : INOUT STD_LOGIC := 'Z';
-    i2c_scl                    : INOUT STD_LOGIC := 'Z';
-
-    spi_MISO                   : IN    STD_LOGIC := 'X';
-    spi_MOSI                   : OUT   STD_LOGIC;
-    spi_SCLK                   : OUT   STD_LOGIC;
-    spi_SS_n                   : OUT   STD_LOGIC;
 )
 {
-    SIGNAL i2c_sda_in : STD_LOGIC;
-    SIGNAL i2c_scl_in : STD_LOGIC;
-    SIGNAL i2c_sda_oe : STD_LOGIC;
-    SIGNAL i2c_scl_oe : STD_LOGIC;
-
-    i2c_scl_in  <= i2c_scl;
-    i2c_scl     <= '0' when i2c_scl_oe = '1' else 'Z';
-    i2c_sda_in  <= i2c_sda;
-    i2c_sda     <= '0' when i2c_sda_oe = '1' else 'Z';
-    
-    NewComponent NIOSDuino_Core
+    NewComponent NIOSDuino_Processor 
     (
-        clk_in_clk     => CLK,
-        reset_reset_n  => Reset,
-        i2c_sda_in     => i2c_sda_in,
-        i2c_scl_in     => i2c_scl_in,
-        i2c_sda_oe     => i2c_sda_oe,
-        i2c_scl_oe     => i2c_scl_oe,
-        pio_export     => pio_export,
-        sdram_addr     => sdram_addr,
-        sdram_ba       => sdram_ba,
-        sdram_cas_n    => sdram_cas_n,
-        sdram_dq       => sdram_dq,
-        sdram_dqm      => sdram_dqm,
-        sdram_ras_n    => sdram_ras_n,
-        sdram_we_n     => sdram_we_n,
-        sdram_clk_clk  => sdram_clk_clk,
-        spi_MISO       => spi_MISO,
-        spi_MOSI       => spi_MOSI,
-        spi_SCLK       => spi_SCLK,
-        spi_SS_n       => spi_SS_n,
-        spi_flash_MISO => spi_flash_MISO,
-        spi_flash_MOSI => spi_flash_MOSI,
-        spi_flash_SCLK => spi_flash_SCLK,
-        spi_flash_SS_n => spi_flash_SS_n,
-        uart_rxd       => uart_rxd,
-        uart_txd       => uart_txd,
-        pwm_out        => pwm_out,
+        Reset         => Reset,
+        sdram_addr    => sdram_addr,
+        sdram_ba      => sdram_ba,
+        sdram_cas_n   => sdram_cas_n,
+        sdram_dq      => sdram_dq,
+        sdram_dqm     => sdram_dqm,
+        sdram_ras_n   => sdram_ras_n,
+        sdram_we_n    => sdram_we_n,
+        sdram_clk_clk => sdram_clk_clk,
+        pio_export    => pio_export,
+        pwm_out       => pwm_out,
+        uart_rxd      => uart_rxd,
+        uart_txd      => uart_txd,
+        i2c_sda       => i2c_sda,
+        i2c_scl       => i2c_scl,
+        spi_MISO      => spi_MISO,
+        spi_MOSI      => spi_MOSI,
+        spi_SCLK      => spi_SCLK,
+        spi_SS_n      => spi_SS_n,
     );
 }

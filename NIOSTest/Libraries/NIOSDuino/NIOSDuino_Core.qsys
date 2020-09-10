@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <system name="$${FILENAME}">
   <component name="$${FILENAME}" displayName="$${FILENAME}" version="1.0" description="" tags="" categories="System" />
   <parameter name="bonusData"><![CDATA[bonusData 
@@ -281,7 +281,6 @@
   <interface name="sdram" internal="sdram_controller_0.wire" type="conduit" dir="end" />
   <interface name="sdram_clk" internal="pll.c1" type="clock" dir="start" />
   <interface name="spi" internal="spi_0.external" type="conduit" dir="end" />
-  <interface name="spi_flash" internal="spi_flash.external" type="conduit" dir="end" />
   <interface name="uart" internal="uart_0.external_connection" type="conduit" dir="end" />
   <module name="clk_0" kind="clock_source" version="18.1" enabled="1">
     <parameter name="clockFrequency" value="12000000" />
@@ -308,6 +307,197 @@
     <parameter name="useRelativePathForSimFile" value="false" />
     <parameter name="writeBufferDepth" value="128" />
     <parameter name="writeIRQThreshold" value="8" />
+  </module>
+  <module name="modular_adc_0" kind="altera_modular_adc" version="18.1" enabled="1">
+    <parameter name="AUTO_DEVICE_SPEEDGRADE" value="8" />
+    <parameter name="CLOCK_FREQ" value="50000000" />
+    <parameter name="CORE_VAR" value="0" />
+    <parameter name="DEVICE_PART" value="10M08SAU169C8G" />
+    <parameter name="ENABLE_DEBUG" value="0" />
+    <parameter name="FAMILY" value="MAX 10" />
+    <parameter name="MONITOR_COUNT_WIDTH" value="12" />
+    <parameter name="clkdiv" value="4" />
+    <parameter name="en_thmax_ch0" value="false" />
+    <parameter name="en_thmax_ch1" value="false" />
+    <parameter name="en_thmax_ch10" value="false" />
+    <parameter name="en_thmax_ch11" value="false" />
+    <parameter name="en_thmax_ch12" value="false" />
+    <parameter name="en_thmax_ch13" value="false" />
+    <parameter name="en_thmax_ch14" value="false" />
+    <parameter name="en_thmax_ch15" value="false" />
+    <parameter name="en_thmax_ch16" value="false" />
+    <parameter name="en_thmax_ch2" value="false" />
+    <parameter name="en_thmax_ch3" value="false" />
+    <parameter name="en_thmax_ch4" value="false" />
+    <parameter name="en_thmax_ch5" value="false" />
+    <parameter name="en_thmax_ch6" value="false" />
+    <parameter name="en_thmax_ch7" value="false" />
+    <parameter name="en_thmax_ch8" value="false" />
+    <parameter name="en_thmax_ch9" value="false" />
+    <parameter name="en_thmin_ch0" value="false" />
+    <parameter name="en_thmin_ch1" value="false" />
+    <parameter name="en_thmin_ch10" value="false" />
+    <parameter name="en_thmin_ch11" value="false" />
+    <parameter name="en_thmin_ch12" value="false" />
+    <parameter name="en_thmin_ch13" value="false" />
+    <parameter name="en_thmin_ch14" value="false" />
+    <parameter name="en_thmin_ch15" value="false" />
+    <parameter name="en_thmin_ch16" value="false" />
+    <parameter name="en_thmin_ch2" value="false" />
+    <parameter name="en_thmin_ch3" value="false" />
+    <parameter name="en_thmin_ch4" value="false" />
+    <parameter name="en_thmin_ch5" value="false" />
+    <parameter name="en_thmin_ch6" value="false" />
+    <parameter name="en_thmin_ch7" value="false" />
+    <parameter name="en_thmin_ch8" value="false" />
+    <parameter name="en_thmin_ch9" value="false" />
+    <parameter name="en_tsd_max" value="false" />
+    <parameter name="en_tsd_min" value="false" />
+    <parameter name="enable_usr_sim" value="0" />
+    <parameter name="external_vref" value="2.5" />
+    <parameter name="int_vref_vr" value="3.3" />
+    <parameter name="ip_is_for_which_adc" value="1" />
+    <parameter name="prescaler_ch16" value="false" />
+    <parameter name="prescaler_ch8" value="false" />
+    <parameter name="refsel" value="1" />
+    <parameter name="sample_rate" value="0" />
+    <parameter name="seq_order_length" value="9" />
+    <parameter name="seq_order_slot_1" value="0" />
+    <parameter name="seq_order_slot_10" value="30" />
+    <parameter name="seq_order_slot_11" value="30" />
+    <parameter name="seq_order_slot_12" value="30" />
+    <parameter name="seq_order_slot_13" value="30" />
+    <parameter name="seq_order_slot_14" value="30" />
+    <parameter name="seq_order_slot_15" value="30" />
+    <parameter name="seq_order_slot_16" value="30" />
+    <parameter name="seq_order_slot_17" value="30" />
+    <parameter name="seq_order_slot_18" value="30" />
+    <parameter name="seq_order_slot_19" value="30" />
+    <parameter name="seq_order_slot_2" value="8" />
+    <parameter name="seq_order_slot_20" value="30" />
+    <parameter name="seq_order_slot_21" value="30" />
+    <parameter name="seq_order_slot_22" value="30" />
+    <parameter name="seq_order_slot_23" value="30" />
+    <parameter name="seq_order_slot_24" value="30" />
+    <parameter name="seq_order_slot_25" value="30" />
+    <parameter name="seq_order_slot_26" value="30" />
+    <parameter name="seq_order_slot_27" value="30" />
+    <parameter name="seq_order_slot_28" value="30" />
+    <parameter name="seq_order_slot_29" value="30" />
+    <parameter name="seq_order_slot_3" value="2" />
+    <parameter name="seq_order_slot_30" value="30" />
+    <parameter name="seq_order_slot_31" value="30" />
+    <parameter name="seq_order_slot_32" value="30" />
+    <parameter name="seq_order_slot_33" value="30" />
+    <parameter name="seq_order_slot_34" value="30" />
+    <parameter name="seq_order_slot_35" value="30" />
+    <parameter name="seq_order_slot_36" value="30" />
+    <parameter name="seq_order_slot_37" value="30" />
+    <parameter name="seq_order_slot_38" value="30" />
+    <parameter name="seq_order_slot_39" value="30" />
+    <parameter name="seq_order_slot_4" value="5" />
+    <parameter name="seq_order_slot_40" value="30" />
+    <parameter name="seq_order_slot_41" value="30" />
+    <parameter name="seq_order_slot_42" value="30" />
+    <parameter name="seq_order_slot_43" value="30" />
+    <parameter name="seq_order_slot_44" value="30" />
+    <parameter name="seq_order_slot_45" value="30" />
+    <parameter name="seq_order_slot_46" value="30" />
+    <parameter name="seq_order_slot_47" value="30" />
+    <parameter name="seq_order_slot_48" value="30" />
+    <parameter name="seq_order_slot_49" value="30" />
+    <parameter name="seq_order_slot_5" value="1" />
+    <parameter name="seq_order_slot_50" value="30" />
+    <parameter name="seq_order_slot_51" value="30" />
+    <parameter name="seq_order_slot_52" value="30" />
+    <parameter name="seq_order_slot_53" value="30" />
+    <parameter name="seq_order_slot_54" value="30" />
+    <parameter name="seq_order_slot_55" value="30" />
+    <parameter name="seq_order_slot_56" value="30" />
+    <parameter name="seq_order_slot_57" value="30" />
+    <parameter name="seq_order_slot_58" value="30" />
+    <parameter name="seq_order_slot_59" value="30" />
+    <parameter name="seq_order_slot_6" value="3" />
+    <parameter name="seq_order_slot_60" value="30" />
+    <parameter name="seq_order_slot_61" value="30" />
+    <parameter name="seq_order_slot_62" value="30" />
+    <parameter name="seq_order_slot_63" value="30" />
+    <parameter name="seq_order_slot_64" value="30" />
+    <parameter name="seq_order_slot_7" value="7" />
+    <parameter name="seq_order_slot_8" value="4" />
+    <parameter name="seq_order_slot_9" value="6" />
+    <parameter name="simfilename_ch0" value="" />
+    <parameter name="simfilename_ch1" value="" />
+    <parameter name="simfilename_ch10" value="" />
+    <parameter name="simfilename_ch11" value="" />
+    <parameter name="simfilename_ch12" value="" />
+    <parameter name="simfilename_ch13" value="" />
+    <parameter name="simfilename_ch14" value="" />
+    <parameter name="simfilename_ch15" value="" />
+    <parameter name="simfilename_ch16" value="" />
+    <parameter name="simfilename_ch2" value="" />
+    <parameter name="simfilename_ch3" value="" />
+    <parameter name="simfilename_ch4" value="" />
+    <parameter name="simfilename_ch5" value="" />
+    <parameter name="simfilename_ch6" value="" />
+    <parameter name="simfilename_ch7" value="" />
+    <parameter name="simfilename_ch8" value="" />
+    <parameter name="simfilename_ch9" value="" />
+    <parameter name="thmax_ch0" value="0.0" />
+    <parameter name="thmax_ch1" value="0.0" />
+    <parameter name="thmax_ch10" value="0.0" />
+    <parameter name="thmax_ch11" value="0.0" />
+    <parameter name="thmax_ch12" value="0.0" />
+    <parameter name="thmax_ch13" value="0.0" />
+    <parameter name="thmax_ch14" value="0.0" />
+    <parameter name="thmax_ch15" value="0.0" />
+    <parameter name="thmax_ch16" value="0.0" />
+    <parameter name="thmax_ch2" value="0.0" />
+    <parameter name="thmax_ch3" value="0.0" />
+    <parameter name="thmax_ch4" value="0.0" />
+    <parameter name="thmax_ch5" value="0.0" />
+    <parameter name="thmax_ch6" value="0.0" />
+    <parameter name="thmax_ch7" value="0.0" />
+    <parameter name="thmax_ch8" value="0.0" />
+    <parameter name="thmax_ch9" value="0.0" />
+    <parameter name="thmin_ch0" value="0.0" />
+    <parameter name="thmin_ch1" value="0.0" />
+    <parameter name="thmin_ch10" value="0.0" />
+    <parameter name="thmin_ch11" value="0.0" />
+    <parameter name="thmin_ch12" value="0.0" />
+    <parameter name="thmin_ch13" value="0.0" />
+    <parameter name="thmin_ch14" value="0.0" />
+    <parameter name="thmin_ch15" value="0.0" />
+    <parameter name="thmin_ch16" value="0.0" />
+    <parameter name="thmin_ch2" value="0.0" />
+    <parameter name="thmin_ch3" value="0.0" />
+    <parameter name="thmin_ch4" value="0.0" />
+    <parameter name="thmin_ch5" value="0.0" />
+    <parameter name="thmin_ch6" value="0.0" />
+    <parameter name="thmin_ch7" value="0.0" />
+    <parameter name="thmin_ch8" value="0.0" />
+    <parameter name="thmin_ch9" value="0.0" />
+    <parameter name="tsclksel" value="1" />
+    <parameter name="tsd_max" value="125" />
+    <parameter name="tsd_min" value="0" />
+    <parameter name="use_ch0" value="true" />
+    <parameter name="use_ch1" value="true" />
+    <parameter name="use_ch10" value="false" />
+    <parameter name="use_ch11" value="false" />
+    <parameter name="use_ch12" value="false" />
+    <parameter name="use_ch13" value="false" />
+    <parameter name="use_ch14" value="false" />
+    <parameter name="use_ch15" value="false" />
+    <parameter name="use_ch16" value="false" />
+    <parameter name="use_ch2" value="true" />
+    <parameter name="use_ch3" value="true" />
+    <parameter name="use_ch4" value="true" />
+    <parameter name="use_ch5" value="true" />
+    <parameter name="use_ch6" value="true" />
+    <parameter name="use_ch7" value="true" />
+    <parameter name="use_ch8" value="true" />
+    <parameter name="use_ch9" value="false" />
+    <parameter name="use_tsd" value="false" />
   </module>
   <module name="nios2_qsys_0" kind="altera_nios2_gen2" version="18.1" enabled="1">
     <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="5" />
@@ -617,7 +807,7 @@
     <parameter name="FEEDBACK_SOURCE" value="" />
     <parameter name="GATE_LOCK_COUNTER" value="" />
     <parameter name="GATE_LOCK_SIGNAL" value="" />
-    <parameter name="HIDDEN_CONSTANTS">CT#PORT_clk5 PORT_UNUSED CT#PORT_clk4 PORT_UNUSED CT#PORT_clk3 PORT_UNUSED CT#PORT_clk2 PORT_UNUSED CT#PORT_clk1 PORT_USED CT#PORT_clk0 PORT_USED CT#CLK0_MULTIPLY_BY 25 CT#PORT_SCANWRITE PORT_UNUSED CT#PORT_SCANACLR PORT_UNUSED CT#PORT_PFDENA PORT_UNUSED CT#PORT_PLLENA PORT_UNUSED CT#PORT_SCANDATA PORT_UNUSED CT#PORT_SCANCLKENA PORT_UNUSED CT#WIDTH_CLOCK 5 CT#PORT_SCANDATAOUT PORT_UNUSED CT#LPM_TYPE altpll CT#PLL_TYPE AUTO CT#CLK0_PHASE_SHIFT 0 CT#CLK1_DUTY_CYCLE 50 CT#PORT_PHASEDONE PORT_UNUSED CT#OPERATION_MODE NORMAL CT#PORT_CONFIGUPDATE PORT_UNUSED CT#CLK1_MULTIPLY_BY 25 CT#COMPENSATE_CLOCK CLK0 CT#PORT_CLKSWITCH PORT_UNUSED CT#INCLK0_INPUT_FREQUENCY 83333 CT#PORT_SCANDONE PORT_UNUSED CT#PORT_CLKLOSS PORT_UNUSED CT#PORT_INCLK1 PORT_UNUSED CT#AVALON_USE_SEPARATE_SYSCLK NO CT#PORT_INCLK0 PORT_USED CT#PORT_clkena5 PORT_UNUSED CT#PORT_clkena4 PORT_UNUSED CT#PORT_clkena3 PORT_UNUSED CT#PORT_clkena2 PORT_UNUSED CT#PORT_clkena1 PORT_UNUSED CT#PORT_clkena0 PORT_UNUSED CT#CLK1_PHASE_SHIFT -5000 CT#PORT_ARESET PORT_UNUSED CT#BANDWIDTH_TYPE AUTO CT#INTENDED_DEVICE_FAMILY {MAX 10} CT#PORT_SCANREAD PORT_UNUSED CT#PORT_PHASESTEP PORT_UNUSED CT#PORT_SCANCLK PORT_UNUSED CT#PORT_CLKBAD1 PORT_UNUSED CT#PORT_CLKBAD0 PORT_UNUSED CT#PORT_FBIN PORT_UNUSED CT#PORT_PHASEUPDOWN PORT_UNUSED CT#PORT_extclk3 PORT_UNUSED CT#PORT_extclk2 PORT_UNUSED CT#PORT_extclk1 PORT_UNUSED CT#PORT_PHASECOUNTERSELECT PORT_UNUSED CT#PORT_extclk0 PORT_UNUSED CT#PORT_ACTIVECLOCK PORT_UNUSED CT#CLK0_DUTY_CYCLE 50 CT#CLK0_DIVIDE_BY 6 CT#CLK1_DIVIDE_BY 6 CT#PORT_LOCKED PORT_UNUSED</parameter>
+    <parameter name="HIDDEN_CONSTANTS">CT#PORT_clk5 PORT_UNUSED CT#PORT_clk4 PORT_UNUSED CT#PORT_clk3 PORT_UNUSED CT#PORT_clk2 PORT_UNUSED CT#PORT_clk1 PORT_USED CT#PORT_clk0 PORT_USED CT#CLK0_MULTIPLY_BY 25 CT#PORT_SCANWRITE PORT_UNUSED CT#PORT_SCANACLR PORT_UNUSED CT#PORT_PFDENA PORT_UNUSED CT#PORT_PLLENA PORT_UNUSED CT#PORT_SCANDATA PORT_UNUSED CT#PORT_SCANCLKENA PORT_UNUSED CT#WIDTH_CLOCK 5 CT#PORT_SCANDATAOUT PORT_UNUSED CT#LPM_TYPE altpll CT#PLL_TYPE AUTO CT#CLK0_PHASE_SHIFT 0 CT#CLK1_DUTY_CYCLE 50 CT#PORT_PHASEDONE PORT_UNUSED CT#OPERATION_MODE NORMAL CT#PORT_CONFIGUPDATE PORT_UNUSED CT#CLK1_MULTIPLY_BY 25 CT#COMPENSATE_CLOCK CLK0 CT#PORT_CLKSWITCH PORT_UNUSED CT#INCLK0_INPUT_FREQUENCY 83333 CT#PORT_SCANDONE PORT_UNUSED CT#PORT_CLKLOSS PORT_UNUSED CT#PORT_INCLK1 PORT_UNUSED CT#AVALON_USE_SEPARATE_SYSCLK NO CT#PORT_INCLK0 PORT_USED CT#PORT_clkena5 PORT_UNUSED CT#PORT_clkena4 PORT_UNUSED CT#PORT_clkena3 PORT_UNUSED CT#PORT_clkena2 PORT_UNUSED CT#PORT_clkena1 PORT_UNUSED CT#PORT_clkena0 PORT_UNUSED CT#CLK1_PHASE_SHIFT -5000 CT#PORT_ARESET PORT_UNUSED CT#BANDWIDTH_TYPE AUTO CT#INTENDED_DEVICE_FAMILY {MAX 10} CT#PORT_SCANREAD PORT_UNUSED CT#PORT_PHASESTEP PORT_UNUSED CT#PORT_SCANCLK PORT_UNUSED CT#PORT_CLKBAD1 PORT_UNUSED CT#PORT_CLKBAD0 PORT_UNUSED CT#PORT_FBIN PORT_UNUSED CT#PORT_PHASEUPDOWN PORT_UNUSED CT#PORT_extclk3 PORT_UNUSED CT#PORT_extclk2 PORT_UNUSED CT#PORT_extclk1 PORT_UNUSED CT#PORT_PHASECOUNTERSELECT PORT_UNUSED CT#PORT_extclk0 PORT_UNUSED CT#PORT_ACTIVECLOCK PORT_UNUSED CT#CLK0_DUTY_CYCLE 50 CT#CLK0_DIVIDE_BY 6 CT#CLK1_DIVIDE_BY 6 CT#PORT_LOCKED PORT_USED</parameter>
     <parameter name="HIDDEN_CUSTOM_ELABORATION">altpll_avalon_elaboration</parameter>
     <parameter name="HIDDEN_CUSTOM_POST_EDIT">altpll_avalon_post_edit</parameter>
     <parameter name="HIDDEN_IF_PORTS">IF#phasecounterselect {input 3} IF#locked {output 0} IF#reset {input 0} IF#clk {input 0} IF#phaseupdown {input 0} IF#scandone {output 0} IF#readdata {output 32} IF#write {input 0} IF#scanclk {input 0} IF#phasedone {output 0} IF#c4 {output 0} IF#c3 {output 0} IF#c2 {output 0} IF#address {input 2} IF#c1 {output 0} IF#c0 {output 0} IF#writedata {input 32} IF#read {input 0} IF#areset {input 0} IF#scanclkena {input 0} IF#scandataout {output 0} IF#configupdate {input 0} IF#phasestep {input 0} IF#scandata {input 0}</parameter>
@@ -647,7 +837,7 @@
     <parameter name="PORT_FBOUT" value="" />
     <parameter name="PORT_INCLK0" value="PORT_USED" />
     <parameter name="PORT_INCLK1" value="PORT_UNUSED" />
-    <parameter name="PORT_LOCKED" value="PORT_UNUSED" />
+    <parameter name="PORT_LOCKED" value="PORT_USED" />
     <parameter name="PORT_PFDENA" value="PORT_UNUSED" />
     <parameter name="PORT_PHASECOUNTERSELECT" value="PORT_UNUSED" />
     <parameter name="PORT_PHASEDONE" value="PORT_UNUSED" />
@@ -763,22 +953,6 @@
     <parameter name="targetClockRate" value="128000" />
     <parameter name="targetSlaveSelectToSClkDelay" value="0.0" />
   </module>
-  <module name="spi_flash" kind="altera_avalon_spi" version="18.1" enabled="1">
-    <parameter name="avalonSpec" value="2.0" />
-    <parameter name="clockPhase" value="0" />
-    <parameter name="clockPolarity" value="0" />
-    <parameter name="dataWidth" value="8" />
-    <parameter name="disableAvalonFlowControl" value="false" />
-    <parameter name="inputClockRate" value="50000000" />
-    <parameter name="insertDelayBetweenSlaveSelectAndSClk" value="false" />
-    <parameter name="insertSync" value="false" />
-    <parameter name="lsbOrderedFirst" value="false" />
-    <parameter name="masterSPI" value="true" />
-    <parameter name="numberOfSlaves" value="1" />
-    <parameter name="syncRegDepth" value="2" />
-    <parameter name="targetClockRate" value="128000" />
-    <parameter name="targetSlaveSelectToSClkDelay" value="0.0" />
-  </module>
   <module name="sysid_qsys_0" kind="altera_avalon_sysid_qsys" version="18.1" enabled="1">
     <parameter name="id" value="17149200" />
   </module>
@@ -795,10 +969,10 @@
     <parameter name="watchdogPulse" value="2" />
   </module>
   <module name="uart_0" kind="altera_avalon_uart" version="18.1" enabled="1">
-    <parameter name="baud" value="115200" />
+    <parameter name="baud" value="9600" />
     <parameter name="clockRate" value="50000000" />
     <parameter name="dataBits" value="8" />
-    <parameter name="fixedBaud" value="false" />
+    <parameter name="fixedBaud" value="true" />
     <parameter name="parity" value="NONE" />
     <parameter name="simCharStream" value="" />
     <parameter name="simInteractiveInputEnable" value="false" />
@@ -875,9 +1049,14 @@
     <parameter name="baseAddress" value="0x01111140" />
     <parameter name="defaultConnection" value="false" />
   </connection>
-  <connection kind="avalon" version="18.1" start="nios2_qsys_0.data_master" end="spi_flash.spi_control_port">
+  <connection kind="avalon" version="18.1" start="nios2_qsys_0.data_master" end="modular_adc_0.sample_store_csr">
     <parameter name="arbitrationPriority" value="1" />
-    <parameter name="baseAddress" value="0x01111080" />
+    <parameter name="baseAddress" value="0x01111400" />
+    <parameter name="defaultConnection" value="false" />
+  </connection>
+  <connection kind="avalon" version="18.1" start="nios2_qsys_0.data_master" end="modular_adc_0.sequencer_csr">
+    <parameter name="arbitrationPriority" value="1" />
+    <parameter name="baseAddress" value="0x01111220" />
     <parameter name="defaultConnection" value="false" />
   </connection>
   <connection kind="avalon" version="18.1" start="nios2_qsys_0.data_master" end="spi_0.spi_control_port">
@@ -920,25 +1099,28 @@
     <parameter name="baseAddress" value="0x011110a0" />
     <parameter name="defaultConnection" value="false" />
   </connection>
-  <connection kind="avalon" version="18.1" start="nios2_qsys_0.instruction_master" end="spi_flash.spi_control_port">
-    <parameter name="arbitrationPriority" value="1" />
-    <parameter name="baseAddress" value="0x01111080" />
-    <parameter name="defaultConnection" value="false" />
-  </connection>
+  <connection kind="clock" version="18.1" start="pll.c0" end="modular_adc_0.adc_pll_clock" />
   <connection kind="clock" version="18.1" start="pll.c0" end="nios2_qsys_0.clk" />
   <connection kind="clock" version="18.1" start="pll.c0" end="sysid_qsys_0.clk" />
   <connection kind="clock" version="18.1" start="pll.c0" end="sdram_controller_0.clk" />
   <connection kind="clock" version="18.1" start="pll.c0" end="pio_0.clk" />
   <connection kind="clock" version="18.1" start="pll.c0" end="uart_0.clk" />
-  <connection kind="clock" version="18.1" start="pll.c0" end="spi_flash.clk" />
   <connection kind="clock" version="18.1" start="pll.c0" end="timer_0.clk" />
   <connection kind="clock" version="18.1" start="pll.c0" end="jtag_uart_0.clk" />
   <connection kind="clock" version="18.1" start="pll.c0" end="spi_0.clk" />
   <connection kind="clock" version="18.1" start="pll.c0" end="onchip_flash_0.clk" />
   <connection kind="clock" version="18.1" start="pll.c0" end="onchip_memory2_0.clk1" />
   <connection kind="clock" version="18.1" start="pll.c0" end="i2c_0.clock" />
+  <connection kind="clock" version="18.1" start="pll.c0" end="modular_adc_0.clock" />
   <connection kind="clock" version="18.1" start="pll.c0" end="pwm_0.clock" />
   <connection kind="clock" version="18.1" start="clk_0.clk" end="pll.inclk_interface" />
+  <connection kind="conduit" version="18.1" start="pll.locked_conduit" end="modular_adc_0.adc_pll_locked">
+    <parameter name="endPort" value="" />
+    <parameter name="endPortLSB" value="0" />
+    <parameter name="startPort" value="" />
+    <parameter name="startPortLSB" value="0" />
+    <parameter name="width" value="0" />
+  </connection>
   <connection kind="interrupt" version="18.1" start="nios2_qsys_0.irq" end="i2c_0.interrupt_sender">
     <parameter name="irqNumber" value="5" />
   </connection>
@@ -947,9 +1129,6 @@
   </connection>
   <connection kind="interrupt" version="18.1" start="nios2_qsys_0.irq" end="uart_0.irq">
     <parameter name="irqNumber" value="0" />
-  </connection>
-  <connection kind="interrupt" version="18.1" start="nios2_qsys_0.irq" end="spi_flash.irq">
-    <parameter name="irqNumber" value="1" />
   </connection>
   <connection kind="interrupt" version="18.1" start="nios2_qsys_0.irq" end="timer_0.irq">
     <parameter name="irqNumber" value="3" />
@@ -960,6 +1139,9 @@
   <connection kind="interrupt" version="18.1" start="nios2_qsys_0.irq" end="spi_0.irq">
     <parameter name="irqNumber" value="6" />
   </connection>
+  <connection kind="interrupt" version="18.1" start="nios2_qsys_0.irq" end="modular_adc_0.sample_store_irq">
+    <parameter name="irqNumber" value="7" />
+  </connection>
   <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="pll.inclk_interface_reset" />
   <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="onchip_flash_0.nreset" />
   <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="nios2_qsys_0.reset" />
@@ -967,13 +1149,13 @@
   <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="sdram_controller_0.reset" />
   <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="pio_0.reset" />
   <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="uart_0.reset" />
-  <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="spi_flash.reset" />
   <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="timer_0.reset" />
   <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="jtag_uart_0.reset" />
   <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="spi_0.reset" />
   <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="pwm_0.reset" />
   <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="onchip_memory2_0.reset1" />
   <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="i2c_0.reset_sink" />
+  <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="modular_adc_0.reset_sink" />
   <connection kind="reset" version="18.1" start="nios2_qsys_0.debug_reset_request" end="pll.inclk_interface_reset" />
   <connection kind="reset" version="18.1" start="nios2_qsys_0.debug_reset_request" end="onchip_flash_0.nreset" />
   <connection kind="reset" version="18.1" start="nios2_qsys_0.debug_reset_request" end="nios2_qsys_0.reset" />
@@ -981,7 +1163,6 @@
   <connection kind="reset" version="18.1" start="nios2_qsys_0.debug_reset_request" end="sdram_controller_0.reset" />
   <connection kind="reset" version="18.1" start="nios2_qsys_0.debug_reset_request" end="pio_0.reset" />
   <connection kind="reset" version="18.1" start="nios2_qsys_0.debug_reset_request" end="uart_0.reset" />
-  <connection kind="reset" version="18.1" start="nios2_qsys_0.debug_reset_request" end="spi_flash.reset" />
   <connection kind="reset" version="18.1" start="nios2_qsys_0.debug_reset_request" end="onchip_memory2_0.reset1" />
   <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
   <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />

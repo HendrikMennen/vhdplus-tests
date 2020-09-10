@@ -19,6 +19,9 @@
   <Items xsi:type="ProjectFileVHDP">
     <Header>BuildTest1.vhdp</Header>
   </Items>
+  <Items xsi:type="ProjectFileGHDP">
+    <Header>newfile.ghdp</Header>
+  </Items>
   <SelectedExtensionsSave />
   <IOVoltage>0</IOVoltage>
 </ProjectRoot>

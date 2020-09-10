@@ -4,7 +4,7 @@
 
 # List of include directories for -I compiler option (-I added when used).
 # Includes the BSP.
-ALT_INCLUDE_DIRS := arduino arduino/Wire/src arduino/SPI/src C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/nios2-elf/include
+ALT_INCLUDE_DIRS := arduino arduino/Wire/src arduino/SPI/src
 
 # List of library directories for -L linker option (-L added when used).
 # Includes the BSP.
@@ -160,6 +160,9 @@ CXX_SRCS += arduino/SPIFlash.cpp
 CXX_SRCS += NIOSDuino.cpp
 CXX_SRCS += arduino/Wire/src/Wire.cpp
 CXX_SRCS += arduino/wiring_analog.cpp
+CXX_SRCS += arduino/HardwareSerial1.cpp
+CXX_SRCS += arduino/HardwareSerial2.cpp
+CXX_SRCS += arduino/HardwareSerial3.cpp
 ASM_SRCS :=
 
 

@@ -1,14 +1,11 @@
+
 #include <Arduino.h>
 
-double i = 0;
-
 void setup() {
-    Serial.begin(9600);
+    Serial.begin(9600); //Set Baudrate with "New Processor"
 }
 
 void loop() {
-    Serial.println(i);
+    Serial.println("Hello World2");
     delay(1000);
-    i++;
-    if(i > 5) i = 0;
 }
