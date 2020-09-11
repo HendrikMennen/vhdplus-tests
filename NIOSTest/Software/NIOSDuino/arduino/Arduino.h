@@ -1,7 +1,6 @@
 /*
   Arduino.h - Main include file for the Arduino SDK
   Copyright (c) 2005-2013 Arduino Team.  All right reserved.
-
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Lesser General Public
   License as published by the Free Software Foundation; either

@@ -1,0 +1,135 @@
+Component NIOSTest_tb()
+{
+    SIGNAL finished : STD_LOGIC:= '0';
+    CONSTANT period_time : TIME := 83333 ps;
+
+    Process Sim_finished()
+    {
+        wait for 100000 us;
+        finished <= '1';
+        wait;
+    }
+
+    NewComponent NIOSTest
+    (
+        Reset => Reset,
+        sdram_addr => sdram_addr,
+        sdram_ba => sdram_ba,
+        sdram_cas_n => sdram_cas_n,
+        sdram_dq => sdram_dq,
+        sdram_dqm => sdram_dqm,
+        sdram_ras_n => sdram_ras_n,
+        sdram_we_n => sdram_we_n,
+        sdram_clk_clk => sdram_clk_clk,
+        pio_export => pio_export,
+        pwm_out => pwm_out,
+        uart_rxd => uart_rxd,
+        uart_txd => uart_txd,
+        i2c_sda => i2c_sda,
+        i2c_scl => i2c_scl,
+        spi_MISO => spi_MISO,
+        spi_MOSI => spi_MOSI,
+        spi_SCLK => spi_SCLK,
+        spi_SS_n => spi_SS_n,
+        LED => LED,
+        CLK => CLK,
+    );
+
+    SIGNAL Reset : STD_LOGIC ;
+    SIGNAL sdram_addr : STD_LOGIC_VECTOR (11 downto 0);
+    SIGNAL sdram_ba : STD_LOGIC_VECTOR (1 downto 0);
+    SIGNAL sdram_cas_n : STD_LOGIC ;
+    SIGNAL sdram_dq : STD_LOGIC_VECTOR (15 downto 0);
+    SIGNAL sdram_dqm : STD_LOGIC_VECTOR (1 downto 0);
+    SIGNAL sdram_ras_n : STD_LOGIC ;
+    SIGNAL sdram_we_n : STD_LOGIC ;
+    SIGNAL sdram_clk_clk : STD_LOGIC ;
+    SIGNAL pio_export : STD_LOGIC_VECTOR (15 downto 0);
+    SIGNAL pwm_out : STD_LOGIC_VECTOR (3 downto 0);
+    SIGNAL uart_rxd : STD_LOGIC ;
+    SIGNAL uart_txd : STD_LOGIC ;
+    SIGNAL i2c_sda : STD_LOGIC ;
+    SIGNAL i2c_scl : STD_LOGIC ;
+    SIGNAL spi_MISO : STD_LOGIC ;
+    SIGNAL spi_MOSI : STD_LOGIC ;
+    SIGNAL spi_SCLK : STD_LOGIC ;
+    SIGNAL spi_SS_n : STD_LOGIC ;
+    SIGNAL LED : STD_LOGIC  := '1';
+    SIGNAL CLK : STD_LOGIC := '0';
+
+
+    Process Sim_Reset()
+    {
+        While(finished /= '1')
+        {
+            wait;
+        }
+        wait;
+    }
+
+    Process Sim_sdram_dq()
+    {
+        While(finished /= '1')
+        {
+            wait;
+        }
+        wait;
+    }
+
+    Process Sim_pio_export()
+    {
+        While(finished /= '1')
+        {
+            wait;
+        }
+        wait;
+    }
+
+    Process Sim_uart_rxd()
+    {
+        While(finished /= '1')
+        {
+            wait;
+        }
+        wait;
+    }
+
+    Process Sim_i2c_sda()
+    {
+        While(finished /= '1')
+        {
+            wait;
+        }
+        wait;
+    }
+
+    Process Sim_i2c_scl()
+    {
+        While(finished /= '1')
+        {
+            wait;
+        }
+        wait;
+    }
+
+    Process Sim_spi_MISO()
+    {
+        While(finished /= '1')
+        {
+            wait;
+        }
+        wait;
+    }
+
+    Process Sim_CLK()
+    {
+        While(finished /= '1')
+        {
+            CLK <= '0';
+            wait for period_time/2;
+            CLK <= '1';
+            wait for period_time/2;
+        }
+        wait;
+    }
+}

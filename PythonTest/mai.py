@@ -5,7 +5,7 @@ class Test2(object):
     pass
 
 
-class Person:
+class Person: 
     "This is a person class"
     age = 10
 
@@ -23,7 +23,5 @@ print(Person.greet)
 
 # Output: 'This is my second class'
 print(Person.__doc__)
-
-print("gauner")
 
 python2.print()

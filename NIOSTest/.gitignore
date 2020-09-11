@@ -8,12 +8,18 @@ db/
 ## *.qsf
 ## *.qpf
 
+## ISSP
+Libraries/ISSP
+Libraries/.qsys_edit
+
 ## NIOS
 NIOSDuino_Core.sopcinfo
 Software/NIOSDuino_bsp
+mem_init/
 Software/NIOSDuino/obj
 *.map
 *.objdump
 *.elf
 .clangd
+*.flash
 *.sopcinfo

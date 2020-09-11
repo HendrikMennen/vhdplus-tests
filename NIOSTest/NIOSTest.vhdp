@@ -20,9 +20,36 @@ Main
     spi_SCLK      : OUT STD_LOGIC;
     spi_SS_n      : OUT STD_LOGIC;
     
+    LED : BUFFER STD_LOGIC := '1';
 )
 {
-    NewComponent NIOSDuino_Processor 
+    SIGNAL ISSP_source : std_logic_vector (7 downto 0);
+    SIGNAL ISSP_probe  : std_logic_vector (31 downto 0);
+    
+    
+    Process ()
+    {
+        if(ISSP_source(0) = '1')
+        {
+            Thread
+            {
+                LED <= '1';
+                Wait(1000ms);
+                LED <= '0';
+                Wait(1000ms);
+            }
+        }        
+        
+        ISSP_probe(0) <= LED;
+    }
+    
+    NewComponent ISSP
+    (
+        source => ISSP_source,
+        probe  => ISSP_probe,
+    );
+    
+    NewComponent NIOSDuino_Processor
     (
         Reset         => Reset,
         sdram_addr    => sdram_addr,

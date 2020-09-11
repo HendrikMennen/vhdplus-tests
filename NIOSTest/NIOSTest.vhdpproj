@@ -30,6 +30,12 @@
         <Header>NIOSDuino_Core.vhdp</Header>
       </Items>
     </Items>
+    <Items xsi:type="ProjectFile">
+      <Header>ISSP.qsys</Header>
+    </Items>
+    <Items xsi:type="ProjectFileVHDP">
+      <Header>ISSP.qsys.vhdp</Header>
+    </Items>
   </Items>
   <Items xsi:type="ProjectFolder">
     <Header>Software</Header>
@@ -42,6 +48,9 @@
   </Items>
   <Items xsi:type="ProjectFileVHDP">
     <Header>NIOSTest.vhdp</Header>
+  </Items>
+  <Items xsi:type="ProjectFileGHDP">
+    <Header>NIOSTest.ghdp</Header>
   </Items>
   <SelectedExtensionsSave />
   <IOVoltage>0</IOVoltage>
