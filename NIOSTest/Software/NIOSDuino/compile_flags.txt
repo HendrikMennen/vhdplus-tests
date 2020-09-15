@@ -1,0 +1,4 @@
+-Iarduino
+-Iarduino/Wire/src 
+-Iarduino/SPI/src
+-IC:\intelFPGA_lite\18.1\quartus\bin64\cygwin\usr\include

@@ -4,11 +4,11 @@
 
 # List of include directories for -I compiler option (-I added when used).
 # Includes the BSP.
-ALT_INCLUDE_DIRS := arduino arduino/Wire/src arduino/SPI/src 
+ALT_INCLUDE_DIRS := arduino arduino/Wire/src arduino/SPI/src C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/lib/gcc/nios2-elf/5.3.0/include
 
 # List of library directories for -L linker option (-L added when used).
 # Includes the BSP.
-ALT_LIBRARY_DIRS := C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/lib/gcc/nios2-elf/5.3.0/include
+ALT_LIBRARY_DIRS := 
 
 # List of library names for -l linker option (-l added when used).
 # Includes the BSP.
