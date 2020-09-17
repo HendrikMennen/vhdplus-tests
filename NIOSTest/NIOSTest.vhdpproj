@@ -35,9 +35,6 @@
       <Items xsi:type="ProjectFile">
         <Header>NIOSDuino.cpp</Header>
       </Items>
-      <Items xsi:type="ProjectFile">
-        <Header>compile_flags.txt</Header>
-      </Items>
     </Items>
   </Items>
   <Items xsi:type="ProjectFileVHDP">
