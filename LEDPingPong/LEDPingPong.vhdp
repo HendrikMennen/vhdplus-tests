@@ -1,0 +1,98 @@
+Main
+(
+    CS_O          : BUFFER STD_LOGIC;
+    CLK_O         : OUT STD_LOGIC;
+    DIN_O         : OUT STD_LOGIC;
+)
+{
+    CONSTANT LED_Matrix_Length : NATURAL := (4*8);
+    CONSTANT LED_Matrix_Height : NATURAL := 8;
+    CONSTANT TailLength : NATURAL := 5;
+
+    SIGNAL LED_Matrix_Panel_Bitmap  : LED_Matrix_Array (LED_Matrix_Length-1 downto 0);
+    SIGNAL LED_Matrix_Update        : STD_LOGIC;
+    SIGNAL LED_Matrix_Brightness    : NATURAL          range 0 to 15 := 5;
+    SIGNAL LED_Matrix_Shutdown      : STD_LOGIC := '0';
+    SIGNAL LED_Matrix_Config        : STD_LOGIC;
+    
+    TYPE Point IS RECORD
+        XP : NATURAL range 0 to LED_Matrix_Length;
+        YP : NATURAL range 0 to LED_Matrix_Height;
+    END RECORD Point;
+    
+    NewComponent LED_Matrix
+    (
+        CLK_Frequency => 12000000,
+        Panels        => 4,
+        Rotate_seg    => '1',
+        Mirror        => '1',
+        
+        Reset         => '0',
+        CS_O          => CS_O,
+        CLK_O         => CLK_O,
+        DIN_O         => DIN_O,
+        Panel_Bitmap  => LED_Matrix_Panel_Bitmap,
+        Update        => LED_Matrix_Update,
+        Brightness    => LED_Matrix_Brightness,
+        Shutdown      => LED_Matrix_Shutdown,
+        Config        => LED_Matrix_Config,
+    );
+    
+    Process ()
+    {
+                
+        VARIABLE x : NATURAL range 0 to LED_Matrix_Length - 1 := 0;
+        VARIABLE y : NATURAL range 0 to LED_Matrix_Height - 1 := 0;
+        VARIABLE XAdd : BOOLEAN := true;
+        VARIABLE YAdd : BOOLEAN := true;
+        
+        TYPE Tail IS ARRAY (0 to TailLength) OF Point;
+        
+        Thread
+        {
+            LED_Matrix_Panel_Bitmap(x)(y) <= '0';
+
+            if(XAdd)
+            {
+                x := x + 1;
+            }
+            else
+            {
+                x := x - 1;
+            }
+            if(YAdd)
+            {
+                y := y + 1;
+            }
+            else
+            {
+                y := y - 1;
+            }
+            
+            if(x >= LED_Matrix_Length - 1)
+            {
+                XAdd := false;
+            }
+            if(y >= LED_Matrix_Height - 1)
+            {
+                YAdd := false;
+            }
+            if(x <= 0)
+            {
+                XAdd := true;
+            }
+            if(y <= 0)
+            {
+                YAdd := true;
+            }
+            
+            LED_Matrix_Panel_Bitmap(x)(y) <= '1';
+            Tail(0) <= Point := (XP => x, YP => y);
+            
+            Step{ LED_Matrix_Update <= '0'; }
+            LED_Matrix_Update <= '1';
+            
+            Wait(100ms);
+        }
+    }
+}

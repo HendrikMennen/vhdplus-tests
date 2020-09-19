@@ -1,0 +1,57 @@
+Component BuildTest1_tb()
+{
+    SIGNAL finished : STD_LOGIC:= '0';
+    CONSTANT period_time : TIME := 83333 ps;
+
+    Process Sim_finished()
+    {
+        wait for 100000 us;
+        finished <= '1';
+        wait;
+    }
+
+    NewComponent BuildTest1
+    (
+        led => led,
+        btn => btn,
+        CLK => CLK,
+    );
+
+    SIGNAL led : STD_LOGIC  := '0';
+    SIGNAL btn : STD_LOGIC  := '0';
+    SIGNAL CLK : STD_LOGIC := '0';
+
+
+    Process Sim_btn()
+    {
+        While(finished /= '1')
+        {
+            btn <= '0';
+            wait for 10 ms;
+            btn <= '1';
+            wait for 10 ms;
+            btn <= '0';
+            wait for 10 ms;
+            btn <= '1';
+            wait for 10 ms;
+            btn <= '1';
+            wait for 10 ms;
+            btn <= '0';
+            wait for 10 ms;
+            wait;
+        }
+        wait;
+    }
+
+    Process Sim_CLK()
+    {
+        While(finished /= '1')
+        {
+            CLK <= '0';
+            wait for period_time/2;
+            CLK <= '1';
+            wait for period_time/2;
+        }
+        wait;
+    }
+}
