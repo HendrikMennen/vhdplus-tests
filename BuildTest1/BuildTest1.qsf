@@ -28,3 +28,4 @@ set_location_assignment PIN_H1 -to VS[0]
 set_location_assignment PIN_B7 -to VS[1]
 set_location_assignment PIN_L1 -to VS[2]
 set_location_assignment PIN_K13 -to VS_EN
+set_location_assignment PIN_D7 -to btn
