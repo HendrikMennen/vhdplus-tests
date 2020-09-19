@@ -12,9 +12,6 @@
     <Items xsi:type="ProjectFileVHDL">
       <Header>SPI_Master.vhd</Header>
     </Items>
-    <Items xsi:type="ProjectFileVHDL">
-      <Header>UART_Interface.vhd</Header>
-    </Items>
   </Items>
   <Items xsi:type="ProjectFolder">
     <Header>Libraries</Header>

@@ -16,8 +16,8 @@ Main
     SIGNAL LED_Matrix_Config        : STD_LOGIC;
     
     TYPE Point IS RECORD
-        XP : NATURAL range 0 to LED_Matrix_Length;
-        YP : NATURAL range 0 to LED_Matrix_Height;
+    XP : NATURAL range 0 to LED_Matrix_Length;
+    YP : NATURAL range 0 to LED_Matrix_Height;
     END RECORD Point;
     
     NewComponent LED_Matrix
@@ -40,13 +40,13 @@ Main
     
     Process ()
     {
-                
+        
         VARIABLE x : NATURAL range 0 to LED_Matrix_Length - 1 := 0;
         VARIABLE y : NATURAL range 0 to LED_Matrix_Height - 1 := 0;
         VARIABLE XAdd : BOOLEAN := true;
         VARIABLE YAdd : BOOLEAN := true;
         
-        TYPE Tail IS ARRAY (0 to TailLength) OF Point;
+        TYPE Tail IS ARRAY (0 to TailLength) OF Point := (others => Point := (XP => 0, YP => 0));
         
         Thread
         {
@@ -87,7 +87,12 @@ Main
             }
             
             LED_Matrix_Panel_Bitmap(x)(y) <= '1';
-            Tail(0) <= Point := (XP => x, YP => y);
+            
+            For (VARIABLE i : INTEGER := 0; i < TailLength; i := i + 1)
+            {
+                Tail(i) <= Tail(i - 1);
+            }
+            Tail(0) : Point := (XP => x, YP => y);
             
             Step{ LED_Matrix_Update <= '0'; }
             LED_Matrix_Update <= '1';
