@@ -5,21 +5,21 @@
     Date: 06.06.2019
     Copyright (c) 2019 Protop Solutions UG. All right reserved.
     
-    Permission is hereby granted, free of charge, to any person obtaining a copy of
-    this hdl code and associated documentation files (the "HDL Code"), to deal in the
-    HDL Code without restriction, including without limitation the rights to use,
-    copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the
-    HDL Code, and to permit persons to whom the HDL Code is furnished to do so,
+    Permission is hereby granted, free of charge, to any person obtaining a copy of 
+    this hdl code and associated documentation files (the "HDL Code"), to deal in the 
+    HDL Code without restriction, including without limitation the rights to use, 
+    copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the 
+    HDL Code, and to permit persons to whom the HDL Code is furnished to do so, 
     subject to the following conditions:
 
     The above copyright notice and this permission notice shall be included in all
     copies or substantial portions of the HDL Code.
 
-    THE HDL Code IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
-    FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
-    COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
-    AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+    THE HDL Code IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS 
+    FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR 
+    COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN 
+    AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION 
     WITH THE HDL Code OR THE USE OR OTHER DEALINGS IN THE HDL Code.
     
     Important: -SPI_Master.vhdp has to be added to your project too
@@ -221,7 +221,7 @@ Component LED_Matrix
                 {
                     SPI_Interface_Enable <= '0';
                     If(SPI_Interface_Busy = '0')
-                    {
+                    {       
                         If(Panel_Counter < Panels-1)
                         {
                             Panel_Counter <= Panel_Counter + 1;

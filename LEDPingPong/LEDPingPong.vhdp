@@ -40,15 +40,15 @@ Main
         Config        => LED_Matrix_Config,
     );
     
-    Process ()
-    {
-        
+    Process
+    (
         VARIABLE x : NATURAL range 0 to LED_Matrix_Length - 1 := 0;
         VARIABLE y : NATURAL range 0 to LED_Matrix_Height - 1 := 0;
         VARIABLE XAdd : BOOLEAN := true;
         VARIABLE YAdd : BOOLEAN := true;
         VARIABLE Tail : PointArray(0 to TailLength) := (others => (XP => 0, YP => 0));
-        
+    )
+    { 
         Thread
         {
             LED_Matrix_Panel_Bitmap(x)(y) <= '0';

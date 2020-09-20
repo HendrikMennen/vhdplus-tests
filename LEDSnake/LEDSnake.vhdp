@@ -1,0 +1,182 @@
+Main
+(
+    RX            : IN STD_LOGIC;
+    TX            : OUT STD_LOGIC;
+    LED           : OUT STD_LOGIC;
+    CS_O          : BUFFER STD_LOGIC;
+    CLK_O         : OUT STD_LOGIC;
+    DIN_O         : OUT STD_LOGIC;
+)
+{
+    SIGNAL UART_Interface_RX_Busy       : STD_LOGIC;
+    SIGNAL UART_Interface_RX_Data       : STD_LOGIC_VECTOR (8-1 DOWNTO 0);
+    SIGNAL UART_Interface_TX_Enable     : STD_LOGIC;
+    SIGNAL UART_Interface_TX_Busy       : STD_LOGIC;
+    SIGNAL UART_Interface_TX_Data       : STD_LOGIC_VECTOR (8-1 DOWNTO 0);
+    
+    
+    NewComponent UART_Interface
+    (
+        Baud_Rate     => 9600,
+        
+        RX            => RX,
+        TX            => TX,
+        TX_Enable     => UART_Interface_TX_Enable,
+        TX_Busy       => UART_Interface_TX_Busy,
+        TX_Data       => UART_Interface_TX_Data,
+        
+        RX_Busy => UART_Interface_RX_Busy,
+        RX_Data =>UART_Interface_RX_Data,
+    );
+    
+    CONSTANT LED_Matrix_Length : NATURAL := (4*8);
+    CONSTANT LED_Matrix_Height : NATURAL := 8;
+
+    SIGNAL LED_Matrix_Panel_Bitmap  : LED_Matrix_Array (LED_Matrix_Length-1 downto 0);
+    SIGNAL LED_Matrix_Update        : STD_LOGIC;
+    SIGNAL LED_Matrix_Brightness    : NATURAL          range 0 to 15 := 5;
+    SIGNAL LED_Matrix_Shutdown      : STD_LOGIC := '0';
+    SIGNAL LED_Matrix_Config        : STD_LOGIC;
+    
+    NewComponent LED_Matrix
+    (
+        CLK_Frequency => 12000000,
+        Panels        => 4,
+        Rotate_seg    => '1',
+        Mirror        => '1',
+        
+        Reset         => '0',
+        CS_O          => CS_O,
+        CLK_O         => CLK_O,
+        DIN_O         => DIN_O,
+        Panel_Bitmap  => LED_Matrix_Panel_Bitmap,
+        Update        => LED_Matrix_Update,
+        Brightness    => LED_Matrix_Brightness,
+        Shutdown      => LED_Matrix_Shutdown,
+        Config        => LED_Matrix_Config,
+    );
+    
+    SIGNAL UARTInputValue : NATURAL range 0 to 3;
+    SIGNAL UARTOutputValue : NATURAL range 0 to 3;
+
+
+    TYPE Point IS RECORD
+    X : INTEGER range -1 to LED_Matrix_Length;
+    Y : INTEGER range -1 to LED_Matrix_Height;
+    END RECORD Point;
+    
+    TYPE PointArray IS ARRAY (natural range <>) OF Point;
+    
+    
+    Process
+    (
+        --0 = Left, 1 = Top, 2 = Right, 3 = Bottom
+        VARIABLE Direction : NATURAL range 0 to 3 := 0;
+        VARIABLE SnakeLength : POSITIVE range 1 to (LED_Matrix_Length*LED_Matrix_Height-1) := 2;
+        VARIABLE Snake : PointArray(0 to (LED_Matrix_Length*LED_Matrix_Height-1)) := (others => (X => 0, Y => 0));
+        VARIABLE HeadX : INTEGER range -1 to LED_Matrix_Length := 0;
+        VARIABLE HeadY : INTEGER range -1 to LED_Matrix_Height := 0;
+    )
+    {
+        Thread
+        {
+            #region Move
+            
+            HeadX := 0;
+            HeadY := 0;
+            
+            if(HeadX > LED_Matrix_Length - 1)
+            {
+                HeadX := 0;
+            }
+            
+            LED_Matrix_Panel_Bitmap(HeadX)(HeadY) <= '1';
+
+            Step{ LED_Matrix_Update <= '0'; }
+            LED_Matrix_Update <= '1';
+            
+            
+--            if(Direction = 0)
+--            {
+--                HeadX := Snake(0).X - 1;
+--            }
+--            elsif(Direction = 1)
+--            {
+--                HeadY := Snake(0).Y - 1;
+--            }
+--            elsif(Direction = 2)
+--            {
+--                HeadX := Snake(0).X + 1;
+--            }
+--            elsif(Direction = 3)
+--            {
+--                HeadY := Snake(0).Y - 1;
+--            }
+
+            #endregion
+
+            #region CheckBounds
+
+
+--            elsif(HeadX < 0)
+--            {
+--                HeadX := LED_Matrix_Length - 1;
+--            }
+--            if(HeadY >= LED_Matrix_Height)
+--            {
+--                HeadY := 0;
+--            }
+--            elsif(HeadY < 0)
+--            {
+--                HeadY := LED_Matrix_Height - 1;
+--            }
+
+            #endregion
+
+            #region Update
+
+--            For (VARIABLE i : INTEGER := SnakeLength - 1; i > 0; i := i - 1)
+--            {
+--                --Snake(i) := Snake(i - 1);
+--            }
+            --Snake(0) := HEAD;
+
+            
+
+--            UARTOutputValue <= HEAD.X;
+--
+--            NewFunction newString (HeadX);
+--            NewFunction naturalToStringInst (UARTOutputValue, HeadX, bcdEna, bcdBus, bcdBin, bcdDen);
+--
+--            UARTOutputValue <= HEAD.Y;
+--
+--            NewFunction newString (HeadY);
+--            NewFunction naturalToStringInst (UARTOutputValue, HeadY, bcdEnaa, bcdBusa, bcdBina, bcdDena);
+--
+--            NewFunction newString (outputS);
+--            NewFunction assignString (s" ", whitespace);
+--            NewFunction assignString (s"\n", newLine);
+--
+--            NewFunction stringConcat (HeadX, whitespace, outputS);
+--            NewFunction stringConcat (outputS, HeadY, outputS);
+--            NewFunction stringConcat (outputS, newLine, outputS);
+--
+--
+--            NewFunction printString (outputS, UART_Interface_TX_Data, UART_Interface_TX_Busy, UART_Interface_TX_Enable);
+
+            #endregion
+            Wait(1000ms);
+        }
+
+        Thread
+        {
+--            NewFunction newString (inputString);
+--            NewFunction readString (inputString, UART_Interface_RX_Data, UART_Interface_RX_Busy);
+--
+--            NewFunction stringToNatural (inputString, UARTInputValue);
+--            NewFunction printString (inputString, UART_Interface_TX_Data, UART_Interface_TX_Busy, UART_Interface_TX_Enable);
+--
+--            Direction := UARTInputValue;
+        }
+    }
+}

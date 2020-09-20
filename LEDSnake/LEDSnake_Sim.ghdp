@@ -1,0 +1,44 @@
+Component LEDSnake_tb()
+{
+    SIGNAL finished : STD_LOGIC:= '0';
+    CONSTANT period_time : TIME := 83333 ps;
+
+    Process Sim_finished()
+    {
+        wait for 1000 us;
+        finished <= '1';
+        wait;
+    }
+
+    NewComponent LEDSnake
+    (
+        RX => RX,
+        TX => TX,
+        LED => LED,
+        CS_O => CS_O,
+        CLK_O => CLK_O,
+        DIN_O => DIN_O,
+        CLK => CLK,
+    );
+
+    SIGNAL RX : STD_LOGIC ;
+    SIGNAL TX : STD_LOGIC ;
+    SIGNAL LED : STD_LOGIC ;
+    SIGNAL CS_O : STD_LOGIC ;
+    SIGNAL CLK_O : STD_LOGIC ;
+    SIGNAL DIN_O : STD_LOGIC ;
+    SIGNAL CLK : STD_LOGIC := '0';
+
+
+    Process Sim_CLK()
+    {
+        While(finished /= '1')
+        {
+            CLK <= '0';
+            wait for period_time/2;
+            CLK <= '1';
+            wait for period_time/2;
+        }
+        wait;
+    }
+}
