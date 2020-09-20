@@ -7,7 +7,7 @@ Main
 {
     CONSTANT LED_Matrix_Length : NATURAL := (4*8);
     CONSTANT LED_Matrix_Height : NATURAL := 8;
-    CONSTANT TailLength : NATURAL := 5;
+    CONSTANT TailLength : NATURAL := 20;
 
     SIGNAL LED_Matrix_Panel_Bitmap  : LED_Matrix_Array (LED_Matrix_Length-1 downto 0);
     SIGNAL LED_Matrix_Update        : STD_LOGIC;
@@ -19,6 +19,8 @@ Main
     XP : NATURAL range 0 to LED_Matrix_Length;
     YP : NATURAL range 0 to LED_Matrix_Height;
     END RECORD Point;
+    
+    TYPE PointArray IS ARRAY (natural range <>) OF Point;
     
     NewComponent LED_Matrix
     (
@@ -45,8 +47,7 @@ Main
         VARIABLE y : NATURAL range 0 to LED_Matrix_Height - 1 := 0;
         VARIABLE XAdd : BOOLEAN := true;
         VARIABLE YAdd : BOOLEAN := true;
-        
-        TYPE Tail IS ARRAY (0 to TailLength) OF Point := (others => Point := (XP => 0, YP => 0));
+        VARIABLE Tail : PointArray(0 to TailLength) := (others => (XP => 0, YP => 0));
         
         Thread
         {
@@ -69,6 +70,16 @@ Main
                 y := y - 1;
             }
             
+            
+            For (VARIABLE a : INTEGER := TailLength - 1; a > 0; a := a - 1)
+            {
+                if(Tail(a).XP = x AND Tail(a).YP = y)
+                {
+                    --Collision detection
+                    
+                }
+            }
+            
             if(x >= LED_Matrix_Length - 1)
             {
                 XAdd := false;
@@ -85,14 +96,19 @@ Main
             {
                 YAdd := true;
             }
+
             
             LED_Matrix_Panel_Bitmap(x)(y) <= '1';
             
-            For (VARIABLE i : INTEGER := 0; i < TailLength; i := i + 1)
+            For (VARIABLE i : INTEGER := TailLength - 1; i > 0; i := i - 1)
             {
-                Tail(i) <= Tail(i - 1);
+                Tail(i) := Tail(i - 1);
+                LED_Matrix_Panel_Bitmap(Tail(i).XP)(Tail(i).YP) <= '1';
             }
-            Tail(0) : Point := (XP => x, YP => y);
+            Tail(0) := (XP => x, YP => y);
+            
+            LED_Matrix_Panel_Bitmap(Tail(TailLength-1).XP)(Tail(TailLength-1).YP) <= '0';
+            
             
             Step{ LED_Matrix_Update <= '0'; }
             LED_Matrix_Update <= '1';
