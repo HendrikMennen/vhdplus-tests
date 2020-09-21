@@ -110,11 +110,11 @@ Main
         out_data  => rng_xoshiro128plusplus_out_data,
     );
     
-    SIGNAL SnakeLength : POSITIVE range 1 to (LED_Matrix_Length*LED_Matrix_Height-1) := 1;
+    SIGNAL SnakeLength : POSITIVE range 1 to (LED_Matrix_Length*LED_Matrix_Height-1) := 3;
     Process
     (
         --0 = Left, 1 = Top, 2 = Right, 3 = Bottom
-        VARIABLE Direction : NATURAL range 0 to 3 := 0;
+        VARIABLE Direction : NATURAL range 0 to 3 := 2;
 
         VARIABLE Ready : BOOLEAN := false;
         
@@ -171,16 +171,16 @@ Main
                     (Direction = 3 AND Head.Y <= 0))
                 {
                     --Reset
-                    Direction := 0;
+                    Direction := 2;
                     Head.X := 0;
                     Head.Y := 0;
-                    SnakeLength <= 1;
+                    SnakeLength <= 3;
                     Snack := (X => TO_INTEGER(UNSIGNED(rng_xoshiro128plusplus_out_data(4 downto 0))),
                         Y => TO_INTEGER(UNSIGNED(rng_xoshiro128plusplus_out_data(7 downto 5))));
                     
-                    NewFunction assignString (s"Game Over! Your Score: ", gameOverTextString);
+                    NewFunction assignString (s"\nGame Over! Your Score: ", gameOverTextString);
                     NewFunction newString (scoreString);
-                    NewFunction naturalToStringInst (SnakeLength, scoreString, bcdEna, bcdBus, bcdBin, bcdDec);
+                    NewFunction naturalToStringInst ((SnakeLength-1), scoreString, bcdEna, bcdBus, bcdBin, bcdDec);
                     NewFunction newString (gameOverString);
                     NewFunction stringConcat (gameOverTextString, scoreString, gameOverString);
                     NewFunction printString (gameOverString, UART_Interface_TX_Data, UART_Interface_TX_Busy, UART_Interface_TX_Enable);
