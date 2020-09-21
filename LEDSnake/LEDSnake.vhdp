@@ -180,7 +180,7 @@ Main
                     
                     NewFunction assignString (s"\nGame Over! Your Score: ", gameOverTextString);
                     NewFunction newString (scoreString);
-                    NewFunction naturalToStringInst ((SnakeLength-1), scoreString, bcdEna, bcdBus, bcdBin, bcdDec);
+                    NewFunction naturalToStringInst ((SnakeLength-3), scoreString, bcdEna, bcdBus, bcdBin, bcdDec);
                     NewFunction newString (gameOverString);
                     NewFunction stringConcat (gameOverTextString, scoreString, gameOverString);
                     NewFunction printString (gameOverString, UART_Interface_TX_Data, UART_Interface_TX_Busy, UART_Interface_TX_Enable);
