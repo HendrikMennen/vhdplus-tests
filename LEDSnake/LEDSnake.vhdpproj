@@ -10,6 +10,9 @@
       <Header>BinaryToBcdDigit.vhd</Header>
     </Items>
     <Items xsi:type="ProjectFileVHDL">
+      <Header>Input_Debouncer.vhd</Header>
+    </Items>
+    <Items xsi:type="ProjectFileVHDL">
       <Header>LED_Matrix.vhd</Header>
     </Items>
     <Items xsi:type="ProjectFileVHDL">
@@ -38,6 +41,9 @@
     </Items>
     <Items xsi:type="ProjectFileVHDP">
       <Header>BinaryToBcdDigit.vhdp</Header>
+    </Items>
+    <Items xsi:type="ProjectFileVHDP">
+      <Header>Input_Debouncer.vhdp</Header>
     </Items>
     <Items xsi:type="ProjectFileVHDP">
       <Header>LED_Matrix.vhdp</Header>
