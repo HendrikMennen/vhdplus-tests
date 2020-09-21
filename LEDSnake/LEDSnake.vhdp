@@ -32,7 +32,7 @@ Main
     CONSTANT LED_Matrix_Length : NATURAL := (4*8);
     CONSTANT LED_Matrix_Height : NATURAL := 8;
 
-    SIGNAL LED_Matrix_Panel_Bitmap  : LED_Matrix_Array (LED_Matrix_Length-1 downto 0);
+    SIGNAL LED_Matrix_Panel_Bitmap  : LED_Matrix_Array (LED_Matrix_Length-1 downto 0) := (others => (others => '0'));
     SIGNAL LED_Matrix_Update        : STD_LOGIC;
     SIGNAL LED_Matrix_Brightness    : NATURAL          range 0 to 15 := 5;
     SIGNAL LED_Matrix_Shutdown      : STD_LOGIC := '0';
@@ -61,87 +61,86 @@ Main
 
 
     TYPE Point IS RECORD
-    X : INTEGER range -1 to LED_Matrix_Length;
-    Y : INTEGER range -1 to LED_Matrix_Height;
+    X : NATURAL range 0 to LED_Matrix_Length;
+    Y : NATURAL range 0 to LED_Matrix_Height;
     END RECORD Point;
     
     TYPE PointArray IS ARRAY (natural range <>) OF Point;
-    
     
     Process
     (
         --0 = Left, 1 = Top, 2 = Right, 3 = Bottom
         VARIABLE Direction : NATURAL range 0 to 3 := 0;
-        VARIABLE SnakeLength : POSITIVE range 1 to (LED_Matrix_Length*LED_Matrix_Height-1) := 2;
+        VARIABLE SnakeLength : POSITIVE range 1 to (LED_Matrix_Length*LED_Matrix_Height-1) := 1;
         VARIABLE Snake : PointArray(0 to (LED_Matrix_Length*LED_Matrix_Height-1)) := (others => (X => 0, Y => 0));
-        VARIABLE HeadX : INTEGER range -1 to LED_Matrix_Length := 0;
-        VARIABLE HeadY : INTEGER range -1 to LED_Matrix_Height := 0;
     )
     {
         Thread
         {
             #region Move
             
-            HeadX := 0;
-            HeadY := 0;
+            VARIABLE Head : Point;
+            Head := (X => Snake(0).X, Y => Snake(0).Y);
             
-            if(HeadX > LED_Matrix_Length - 1)
+            if(Direction = 0)
             {
-                HeadX := 0;
+                if(Head.X <= 0) --Check bounds
+                {
+                    Head.X := LED_Matrix_Length - 1;
+                }
+                else
+                {
+                    Head.X := Head.X - 1;
+                }
             }
-            
-            LED_Matrix_Panel_Bitmap(HeadX)(HeadY) <= '1';
-
-            Step{ LED_Matrix_Update <= '0'; }
-            LED_Matrix_Update <= '1';
-            
-            
---            if(Direction = 0)
---            {
---                HeadX := Snake(0).X - 1;
---            }
---            elsif(Direction = 1)
---            {
---                HeadY := Snake(0).Y - 1;
---            }
---            elsif(Direction = 2)
---            {
---                HeadX := Snake(0).X + 1;
---            }
---            elsif(Direction = 3)
---            {
---                HeadY := Snake(0).Y - 1;
---            }
-
-            #endregion
-
-            #region CheckBounds
-
-
---            elsif(HeadX < 0)
---            {
---                HeadX := LED_Matrix_Length - 1;
---            }
---            if(HeadY >= LED_Matrix_Height)
---            {
---                HeadY := 0;
---            }
---            elsif(HeadY < 0)
---            {
---                HeadY := LED_Matrix_Height - 1;
---            }
+            elsif(Direction = 1)
+            {
+                if(Head.Y >= LED_Matrix_Height - 1)
+                {
+                    Head.Y := 0;
+                }
+                else
+                {
+                    Head.Y := Head.Y - 1;
+                }
+            }
+            elsif(Direction = 2)
+            {
+                if(Head.X >= LED_Matrix_Length - 1)
+                {
+                    Head.X := 0;
+                }
+                else
+                {
+                    Head.X := Head.X + 1;
+                }
+            }
+            elsif(Direction = 3)
+            {
+                if(Head.Y = 0)
+                {
+                    Head.Y := LED_Matrix_Height - 1;
+                }
+                else
+                {
+                    Head.Y := Head.Y - 1;
+                }
+            }
 
             #endregion
 
             #region Update
 
---            For (VARIABLE i : INTEGER := SnakeLength - 1; i > 0; i := i - 1)
---            {
---                --Snake(i) := Snake(i - 1);
---            }
-            --Snake(0) := HEAD;
+            For (VARIABLE i : INTEGER := SnakeLength; i > 0; i := i - 1)
+            {
+                Snake(i) := Snake(i - 1);
+            }
+            Snake(0) := Head;
 
-            
+            LED_Matrix_Panel_Bitmap(Head.X)(Head.Y) <= '1';
+            LED_Matrix_Panel_Bitmap(Snake(SnakeLength).X)(Snake(SnakeLength).Y) <= '0';
+
+
 
 --            UARTOutputValue <= HEAD.X;
 --
@@ -164,19 +163,24 @@ Main
 --
 --            NewFunction printString (outputS, UART_Interface_TX_Data, UART_Interface_TX_Busy, UART_Interface_TX_Enable);
 
+
+            Step{ LED_Matrix_Update <= '0'; }
+            LED_Matrix_Update <= '1';
+            
             #endregion
-            Wait(1000ms);
+            
+            Wait(100ms);
         }
 
         Thread
         {
---            NewFunction newString (inputString);
---            NewFunction readString (inputString, UART_Interface_RX_Data, UART_Interface_RX_Busy);
---
---            NewFunction stringToNatural (inputString, UARTInputValue);
---            NewFunction printString (inputString, UART_Interface_TX_Data, UART_Interface_TX_Busy, UART_Interface_TX_Enable);
---
---            Direction := UARTInputValue;
+            NewFunction newString (inputString);
+            NewFunction readString (inputString, UART_Interface_RX_Data, UART_Interface_RX_Busy);
+
+            NewFunction stringToNatural (inputString, UARTInputValue);
+            NewFunction printString (inputString, UART_Interface_TX_Data, UART_Interface_TX_Busy, UART_Interface_TX_Enable);
+
+            Direction := UARTInputValue;
         }
     }
 }
