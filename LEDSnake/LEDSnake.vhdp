@@ -104,17 +104,6 @@ Main
 
             Single_Port_RAM_Write <= '0';
 
-
-            Wait(100ms);
-            
-            LED_Matrix_Panel_Bitmap(0)(0) <= '1';
-            
-            Step{ LED_Matrix_Update <= '0'; }
-            LED_Matrix_Update <= '1';
-            
-            NewFunction assignString (s"tset2", testS2);
-            NewFunction printString (testS2, UART_Interface_TX_Data, UART_Interface_TX_Busy, UART_Interface_TX_Enable);
---
             Wait(100ms);
             
             Ready := true;
@@ -135,8 +124,8 @@ Main
 
                 Step
                 {
-                    Head.X := TO_INTEGER(UNSIGNED(Single_Port_RAM_Data_OUT(3 downto 0))); --X;
-                    Head.Y := TO_INTEGER(UNSIGNED(Single_Port_RAM_Data_OUT(7 downto 4))); --Y;
+                    Head.X := TO_INTEGER(UNSIGNED(Single_Port_RAM_Data_OUT(4 downto 0))); --X;
+                    Head.Y := TO_INTEGER(UNSIGNED(Single_Port_RAM_Data_OUT(7 downto 5))); --Y;
                 }
 
 
@@ -200,7 +189,7 @@ Main
                     if(i = SnakeLength)
                     {
                         --Turn last LED in snake off
-                        LED_Matrix_Panel_Bitmap(TO_INTEGER(UNSIGNED(Single_Port_RAM_Data_OUT(3 downto 0))))(TO_INTEGER(UNSIGNED(Single_Port_RAM_Data_OUT(7 downto 4)))) <= '0';
+                        LED_Matrix_Panel_Bitmap(TO_INTEGER(UNSIGNED(Single_Port_RAM_Data_OUT(4 downto 0))))(TO_INTEGER(UNSIGNED(Single_Port_RAM_Data_OUT(7 downto 5)))) <= '0';
                     }
                     Single_Port_RAM_Address <= i;
                     Single_Port_RAM_Write <= '1';
@@ -208,7 +197,7 @@ Main
 
                 --Write Head
                 Single_Port_RAM_Address <= 0;
-                Single_Port_RAM_Data_IN <= STD_LOGIC_VECTOR(TO_UNSIGNED(Head.Y, 4)) & STD_LOGIC_VECTOR(TO_UNSIGNED(Head.X, 4));
+                Single_Port_RAM_Data_IN <= STD_LOGIC_VECTOR(TO_UNSIGNED(Head.Y, 3)) & STD_LOGIC_VECTOR(TO_UNSIGNED(Head.X, 5));
                 LED_Matrix_Panel_Bitmap(Head.X)(Head.Y) <= '1';
 
                 Step{ LED_Matrix_Update <= '0'; Single_Port_RAM_Write <= '0'; }
