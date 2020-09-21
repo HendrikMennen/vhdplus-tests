@@ -105,6 +105,8 @@ Main
             Single_Port_RAM_Write <= '0';
 
 
+            Wait(100ms);
+            
             LED_Matrix_Panel_Bitmap(0)(0) <= '1';
             
             Step{ LED_Matrix_Update <= '0'; }
@@ -125,9 +127,6 @@ Main
             Thread
             {
                 
-                NewFunction assignString (s"tset", testS);
-                NewFunction printString (testS, UART_Interface_TX_Data, UART_Interface_TX_Busy, UART_Interface_TX_Enable);
-                
                 VARIABLE Head : Point;
 
                 --read Snake Head from Ram
@@ -137,7 +136,7 @@ Main
                 Step
                 {
                     Head.X := TO_INTEGER(UNSIGNED(Single_Port_RAM_Data_OUT(3 downto 0))); --X;
-                    Head.Y := TO_INTEGER(UNSIGNED(Single_Port_RAM_Data_OUT(7 downto 4))); --X;
+                    Head.Y := TO_INTEGER(UNSIGNED(Single_Port_RAM_Data_OUT(7 downto 4))); --Y;
                 }
 
 
@@ -162,7 +161,7 @@ Main
                     }
                     else
                     {
-                        Head.Y := Head.Y - 1;
+                        Head.Y := Head.Y + 1;
                     }
                 }
                 elsif(Direction = 2)
@@ -178,7 +177,7 @@ Main
                 }
                 elsif(Direction = 3)
                 {
-                    if(Head.Y = 0)
+                    if(Head.Y <= 0)
                     {
                         Head.Y := LED_Matrix_Height - 1;
                     }
@@ -193,7 +192,7 @@ Main
                 #region Update Snake
 
                 --Write whoole snake to Ram
-                For (VARIABLE i : INTEGER := SnakeLength; i > 0; i := i + 1)
+                For (VARIABLE i : INTEGER := SnakeLength; i > 0; i := i - 1)
                 {
                     Single_Port_RAM_Address <= i - 1;
                     Step{Single_Port_RAM_Write <= '0';}
