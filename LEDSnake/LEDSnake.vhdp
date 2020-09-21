@@ -195,7 +195,7 @@ Main
                 --Write whoole snake to Ram
                 For (VARIABLE i : INTEGER := SnakeLength; i > 0; i := i + 1)
                 {
-                    Single_Port_RAM_Address <= i;
+                    Single_Port_RAM_Address <= i - 1;
                     Step{Single_Port_RAM_Write <= '0';}
                     Single_Port_RAM_Data_IN <= Single_Port_RAM_Data_OUT;
                     if(i = SnakeLength)
@@ -203,7 +203,7 @@ Main
                         --Turn last LED in snake off
                         LED_Matrix_Panel_Bitmap(TO_INTEGER(UNSIGNED(Single_Port_RAM_Data_OUT(3 downto 0))))(TO_INTEGER(UNSIGNED(Single_Port_RAM_Data_OUT(7 downto 4)))) <= '0';
                     }
-                    Single_Port_RAM_Address <= i - 1;
+                    Single_Port_RAM_Address <= i;
                     Single_Port_RAM_Write <= '1';
                 }
 

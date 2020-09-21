@@ -1,5 +1,6 @@
 Package String_Type_Package
 {
+    Include();
     TYPE String_Type IS RECORD
     Length   : NATURAL range 0 to 256;
     Write    : STD_LOGIC;
