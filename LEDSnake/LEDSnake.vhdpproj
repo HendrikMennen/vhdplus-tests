@@ -66,6 +66,9 @@
     <Items xsi:type="ProjectFileVHDP">
       <Header>UART.vhdp</Header>
     </Items>
+    <Items xsi:type="ProjectFileVHDL">
+      <Header>tb_xoroshiro128plus.vhd</Header>
+    </Items>
   </Items>
   <Items xsi:type="ProjectFileVHDP">
     <Header>LEDSnake.vhdp</Header>
