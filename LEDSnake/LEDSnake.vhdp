@@ -209,7 +209,7 @@ Main
 
                 --Write Head
                 Single_Port_RAM_Address <= 0;
-                Single_Port_RAM_Data_IN <= STD_LOGIC_VECTOR(TO_UNSIGNED(Head.X, 4)) & STD_LOGIC_VECTOR(TO_UNSIGNED(Head.Y, 4));
+                Single_Port_RAM_Data_IN <= STD_LOGIC_VECTOR(TO_UNSIGNED(Head.Y, 4)) & STD_LOGIC_VECTOR(TO_UNSIGNED(Head.X, 4));
                 LED_Matrix_Panel_Bitmap(Head.X)(Head.Y) <= '1';
 
                 Step{ LED_Matrix_Update <= '0'; Single_Port_RAM_Write <= '0'; }
