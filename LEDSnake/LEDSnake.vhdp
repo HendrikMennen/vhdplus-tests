@@ -8,6 +8,21 @@ Main
     DIN_O         : OUT STD_LOGIC;
 )
 {
+    SIGNAL Single_Port_RAM_Write    : std_logic;
+    SIGNAL Single_Port_RAM_Address  : natural          range 0 to 256-1;
+    SIGNAL Single_Port_RAM_Data_IN  : std_logic_vector (8-1 downto 0);
+    SIGNAL Single_Port_RAM_Data_OUT : std_logic_vector (8-1 downto 0);
+    NewComponent Single_Port_RAM
+    (
+        Width    => 256,
+        Bits     => 8,
+        
+        Write    => Single_Port_RAM_Write,
+        Address  => Single_Port_RAM_Address,
+        Data_IN  => Single_Port_RAM_Data_IN,
+        Data_OUT => Single_Port_RAM_Data_OUT,
+    );
+    
     SIGNAL UART_Interface_RX_Busy       : STD_LOGIC;
     SIGNAL UART_Interface_RX_Data       : STD_LOGIC_VECTOR (8-1 DOWNTO 0);
     SIGNAL UART_Interface_TX_Enable     : STD_LOGIC;
@@ -72,106 +87,139 @@ Main
         --0 = Left, 1 = Top, 2 = Right, 3 = Bottom
         VARIABLE Direction : NATURAL range 0 to 3 := 0;
         VARIABLE SnakeLength : POSITIVE range 1 to (LED_Matrix_Length*LED_Matrix_Height-1) := 1;
-        VARIABLE Snake : PointArray(0 to (LED_Matrix_Length*LED_Matrix_Height-1)) := (others => (X => 0, Y => 0));
+        
+        VARIABLE Ready : BOOLEAN := false;
     )
     {
         Thread
         {
-            #region Move
+            Single_Port_RAM_Data_IN <= "00000000";
+            Single_Port_RAM_Write <= '1';
+            Single_Port_RAM_Address <= 0;
+
+            --Set default ram
+            For(Single_Port_RAM_Address <= 0; Single_Port_RAM_Address < 256; Single_Port_RAM_Address <= Single_Port_RAM_Address + 1)
+            {
+            }
+
+            Single_Port_RAM_Write <= '0';
+
+            Ready := true;
+
+            LED_Matrix_Panel_Bitmap(0)(0) <= '1';
             
-            VARIABLE Head : Point;
-            Head := (X => Snake(0).X, Y => Snake(0).Y);
-            
-            if(Direction = 0)
-            {
-                if(Head.X <= 0) --Check bounds
-                {
-                    Head.X := LED_Matrix_Length - 1;
-                }
-                else
-                {
-                    Head.X := Head.X - 1;
-                }
-            }
-            elsif(Direction = 1)
-            {
-                if(Head.Y >= LED_Matrix_Height - 1)
-                {
-                    Head.Y := 0;
-                }
-                else
-                {
-                    Head.Y := Head.Y - 1;
-                }
-            }
-            elsif(Direction = 2)
-            {
-                if(Head.X >= LED_Matrix_Length - 1)
-                {
-                    Head.X := 0;
-                }
-                else
-                {
-                    Head.X := Head.X + 1;
-                }
-            }
-            elsif(Direction = 3)
-            {
-                if(Head.Y = 0)
-                {
-                    Head.Y := LED_Matrix_Height - 1;
-                }
-                else
-                {
-                    Head.Y := Head.Y - 1;
-                }
-            }
-
-            #endregion
-
-            #region Update
-
-            For (VARIABLE i : INTEGER := SnakeLength; i > 0; i := i - 1)
-            {
-                Snake(i) := Snake(i - 1);
-            }
-            Snake(0) := Head;
-
-            LED_Matrix_Panel_Bitmap(Head.X)(Head.Y) <= '1';
-            LED_Matrix_Panel_Bitmap(Snake(SnakeLength).X)(Snake(SnakeLength).Y) <= '0';
-
-
-
---            UARTOutputValue <= HEAD.X;
---
---            NewFunction newString (HeadX);
---            NewFunction naturalToStringInst (UARTOutputValue, HeadX, bcdEna, bcdBus, bcdBin, bcdDen);
---
---            UARTOutputValue <= HEAD.Y;
---
---            NewFunction newString (HeadY);
---            NewFunction naturalToStringInst (UARTOutputValue, HeadY, bcdEnaa, bcdBusa, bcdBina, bcdDena);
---
---            NewFunction newString (outputS);
---            NewFunction assignString (s" ", whitespace);
---            NewFunction assignString (s"\n", newLine);
---
---            NewFunction stringConcat (HeadX, whitespace, outputS);
---            NewFunction stringConcat (outputS, HeadY, outputS);
---            NewFunction stringConcat (outputS, newLine, outputS);
---
---
---            NewFunction printString (outputS, UART_Interface_TX_Data, UART_Interface_TX_Busy, UART_Interface_TX_Enable);
-
-
             Step{ LED_Matrix_Update <= '0'; }
             LED_Matrix_Update <= '1';
             
-            #endregion
+            NewFunction assignString (s"tset2", testS2);
+            NewFunction printString (testS2, UART_Interface_TX_Data, UART_Interface_TX_Busy, UART_Interface_TX_Enable);
             
             Wait(100ms);
+            
+            while(true){}
         }
+        
+        If(Ready)
+        {
+            Thread
+            {
+                
+                NewFunction assignString (s"tset", testS);
+                NewFunction printString (testS, UART_Interface_TX_Data, UART_Interface_TX_Busy, UART_Interface_TX_Enable);
+                
+                VARIABLE Head : Point;
 
+                --read Snake Head from Ram
+                Single_Port_RAM_Write <= '0';
+                Single_Port_RAM_Address <= 0;
+
+                Step
+                {
+                    Head.X := TO_INTEGER(UNSIGNED(Single_Port_RAM_Data_OUT(3 downto 0))); --X;
+                    Head.Y := TO_INTEGER(UNSIGNED(Single_Port_RAM_Data_OUT(7 downto 4))); --X;
+                }
+
+
+                #region Move
+
+                if(Direction = 0)
+                {
+                    if(Head.X <= 0) --Check bounds
+                    {
+                        Head.X := LED_Matrix_Length - 1;
+                    }
+                    else
+                    {
+                        Head.X := Head.X - 1;
+                    }
+                }
+                elsif(Direction = 1)
+                {
+                    if(Head.Y >= LED_Matrix_Height - 1)
+                    {
+                        Head.Y := 0;
+                    }
+                    else
+                    {
+                        Head.Y := Head.Y - 1;
+                    }
+                }
+                elsif(Direction = 2)
+                {
+                    if(Head.X >= LED_Matrix_Length - 1)
+                    {
+                        Head.X := 0;
+                    }
+                    else
+                    {
+                        Head.X := Head.X + 1;
+                    }
+                }
+                elsif(Direction = 3)
+                {
+                    if(Head.Y = 0)
+                    {
+                        Head.Y := LED_Matrix_Height - 1;
+                    }
+                    else
+                    {
+                        Head.Y := Head.Y - 1;
+                    }
+                }
+
+                #endregion
+
+                #region Update Snake
+
+                --Write whoole snake to Ram
+                For (VARIABLE i : INTEGER := SnakeLength; i > 0; i := i + 1)
+                {
+                    Single_Port_RAM_Address <= i;
+                    Step{Single_Port_RAM_Write <= '0';}
+                    Single_Port_RAM_Data_IN <= Single_Port_RAM_Data_OUT;
+                    if(i = SnakeLength)
+                    {
+                        --Turn last LED in snake off
+                        LED_Matrix_Panel_Bitmap(TO_INTEGER(UNSIGNED(Single_Port_RAM_Data_OUT(3 downto 0))))(TO_INTEGER(UNSIGNED(Single_Port_RAM_Data_OUT(7 downto 4)))) <= '0';
+                    }
+                    Single_Port_RAM_Address <= i - 1;
+                    Single_Port_RAM_Write <= '1';
+                }
+
+                --Write Head
+                Single_Port_RAM_Address <= 0;
+                Single_Port_RAM_Data_IN <= STD_LOGIC_VECTOR(TO_UNSIGNED(Head.X, 4)) & STD_LOGIC_VECTOR(TO_UNSIGNED(Head.Y, 4));
+                LED_Matrix_Panel_Bitmap(Head.X)(Head.Y) <= '1';
+
+                Step{ LED_Matrix_Update <= '0'; Single_Port_RAM_Write <= '0'; }
+                LED_Matrix_Update <= '1';
+
+                #endregion
+
+                Wait(100ms);
+            }
+        }
+        
         Thread
         {
             NewFunction newString (inputString);
