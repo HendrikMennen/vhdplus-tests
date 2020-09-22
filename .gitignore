@@ -5,5 +5,5 @@ output_files/
 db/
 
 ## Quartus specific
-*.qsf
-*.qpf
+##*.qsf
+##*.qpf

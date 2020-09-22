@@ -19,9 +19,6 @@
       <Header>LEDSnake.vhd</Header>
     </Items>
     <Items xsi:type="ProjectFileVHDL">
-      <Header>LEDSnake_Sim.vhd</Header>
-    </Items>
-    <Items xsi:type="ProjectFileVHDL">
       <Header>Single_Port_RAM.vhd</Header>
     </Items>
     <Items xsi:type="ProjectFileVHDL">
