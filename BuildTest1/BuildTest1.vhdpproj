@@ -6,18 +6,6 @@
     <Items xsi:type="ProjectFileVHDL">
       <Header>BuildTest1.vhd</Header>
     </Items>
-    <Items xsi:type="ProjectFileVHDL">
-      <Header>BuildTest1_Sim.vhd</Header>
-    </Items>
-    <Items xsi:type="ProjectFileVHDL">
-      <Header>Input_Debouncer.vhd</Header>
-    </Items>
-  </Items>
-  <Items xsi:type="ProjectFolder">
-    <Header>Libraries</Header>
-    <Items xsi:type="ProjectFileVHDP">
-      <Header>Input_Debouncer.vhdp</Header>
-    </Items>
   </Items>
   <Items xsi:type="ProjectFileVHDP">
     <Header>BuildTest1.vhdp</Header>

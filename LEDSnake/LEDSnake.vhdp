@@ -10,8 +10,6 @@ Main
     LeftButton    : IN STD_LOGIC;
 )
 {
-    SIGNAL rng_xoshiro128plusplus_out_valid : std_logic;
-    SIGNAL rng_xoshiro128plusplus_out_data  : std_logic_vector (31 downto 0);
     SIGNAL Single_Port_RAM_Write    : std_logic;
     SIGNAL Single_Port_RAM_Address  : natural          range 0 to 256-1;
     SIGNAL Single_Port_RAM_Data_IN  : std_logic_vector (8-1 downto 0);
@@ -73,8 +71,6 @@ Main
     );
     
     SIGNAL UARTInputValue : NATURAL range 0 to 3;
-    SIGNAL UARTOutputValue : NATURAL range 0 to 3;
-
     
     SIGNAL Input_Debouncer_Inputs       : STD_LOGIC_VECTOR (2-1 downto 0);
     SIGNAL Input_Debouncer_Outputs      : STD_LOGIC_VECTOR (2-1 downto 0);
@@ -90,12 +86,15 @@ Main
     );
     
     TYPE Point IS RECORD
-    X : NATURAL range 0 to LED_Matrix_Length;
-    Y : NATURAL range 0 to LED_Matrix_Height;
+    X : INTEGER range -1 to LED_Matrix_Length;
+    Y : INTEGER range -1 to LED_Matrix_Height;
     END RECORD Point;
     
     TYPE PointArray IS ARRAY (natural range <>) OF Point;
     
+    SIGNAL rng_xoshiro128plusplus_out_valid : std_logic;
+    SIGNAL rng_xoshiro128plusplus_out_ready : std_logic := '0';
+    SIGNAL rng_xoshiro128plusplus_out_data  : std_logic_vector (31 downto 0);
     NewComponent rng_xoshiro128plusplus
     (
         init_seed => x"3141592653589793fedcba9876543210",
@@ -105,7 +104,7 @@ Main
         rst       => '0',
         reseed    => '0',
         newseed   => (others => '0'),
-        out_ready => '1',
+        out_ready => rng_xoshiro128plusplus_out_ready,
         out_valid => rng_xoshiro128plusplus_out_valid,
         out_data  => rng_xoshiro128plusplus_out_data,
     );
@@ -157,33 +156,14 @@ Main
                 --read Snake Head from Ram
                 Single_Port_RAM_Write <= '0';
                 Single_Port_RAM_Address <= 0;
-
+                
+                --Use step to generate random
+                rng_xoshiro128plusplus_out_ready <= '1';
                 Step
                 {
+                    rng_xoshiro128plusplus_out_ready <= '0';
                     Head.X := TO_INTEGER(UNSIGNED(Single_Port_RAM_Data_OUT(4 downto 0))); --X;
                     Head.Y := TO_INTEGER(UNSIGNED(Single_Port_RAM_Data_OUT(7 downto 5))); --Y;
-                }
-                
-                --Check Collisions
-                if( (Direction = 0 AND Head.X <= 0) OR
-                    (Direction = 1 AND Head.Y >= LED_Matrix_Height -1) OR
-                    (Direction = 2 AND Head.X >= LED_Matrix_Length -1) OR
-                    (Direction = 3 AND Head.Y <= 0))
-                {
-                    --Reset
-                    Direction := 2;
-                    Head.X := 0;
-                    Head.Y := 0;
-                    SnakeLength <= 3;
-                    Snack := (X => TO_INTEGER(UNSIGNED(rng_xoshiro128plusplus_out_data(4 downto 0))),
-                        Y => TO_INTEGER(UNSIGNED(rng_xoshiro128plusplus_out_data(7 downto 5))));
-                    
-                    NewFunction assignString (s"\nGame Over! Your Score: ", gameOverTextString);
-                    NewFunction newString (scoreString);
-                    NewFunction naturalToStringInst ((SnakeLength-3), scoreString, bcdEna, bcdBus, bcdBin, bcdDec);
-                    NewFunction newString (gameOverString);
-                    NewFunction stringConcat (gameOverTextString, scoreString, gameOverString);
-                    NewFunction printString (gameOverString, UART_Interface_TX_Data, UART_Interface_TX_Busy, UART_Interface_TX_Enable);
                 }
                 
                 #region Move
@@ -207,7 +187,7 @@ Main
 
                 #endregion
                 
-                #region Snack
+                #region Collisions
                 
                 --Check if snack is consumed
                 if(Snack.X = Head.X AND Snack.Y = Head.Y)
@@ -217,6 +197,29 @@ Main
                     Snack := (X => TO_INTEGER(UNSIGNED(rng_xoshiro128plusplus_out_data(4 downto 0))),
                         Y => TO_INTEGER(UNSIGNED(rng_xoshiro128plusplus_out_data(7 downto 5))));
                 }
+                elsif(Head.X < 0
+                    OR Head.Y >= LED_Matrix_Height
+                    OR Head.X >= LED_Matrix_Length
+                    OR Head.Y < 0)
+                    --OR LED_Matrix_Panel_Bitmap(Head.X)(Head.Y) = '1') --Check Collisions
+                {
+                    --Reset
+                    Direction := 2;
+                    Head.X := 0;
+                    Head.Y := 0;
+                    SnakeLength <= 3;
+                    Snack := (X => TO_INTEGER(UNSIGNED(rng_xoshiro128plusplus_out_data(4 downto 0))),
+                        Y => TO_INTEGER(UNSIGNED(rng_xoshiro128plusplus_out_data(7 downto 5))));
+                    
+                    NewFunction assignString (s"\nGame Over! Your Score: ", gameOverTextString);
+                    NewFunction newString (scoreString);
+                    NewFunction naturalToStringInst ((SnakeLength-3), scoreString, bcdEna, bcdBus, bcdBin, bcdDec);
+                    NewFunction newString (gameOverString);
+                    NewFunction stringConcat (gameOverTextString, scoreString, gameOverString);
+                    NewFunction printString (gameOverString, UART_Interface_TX_Data, UART_Interface_TX_Busy, UART_Interface_TX_Enable);
+                }
+                
+
                 
                 #endregion
                 

@@ -10,6 +10,9 @@
       <Header>LEDPingPong.vhd</Header>
     </Items>
     <Items xsi:type="ProjectFileVHDL">
+      <Header>LEDPingPong_Sim.vhd</Header>
+    </Items>
+    <Items xsi:type="ProjectFileVHDL">
       <Header>SPI_Master.vhd</Header>
     </Items>
   </Items>
@@ -24,6 +27,9 @@
   </Items>
   <Items xsi:type="ProjectFileVHDP">
     <Header>LEDPingPong.vhdp</Header>
+  </Items>
+  <Items xsi:type="ProjectFileGHDP">
+    <Header>LEDPingPong_Sim.ghdp</Header>
   </Items>
   <SelectedExtensionsSave />
   <IOVoltage>0</IOVoltage>

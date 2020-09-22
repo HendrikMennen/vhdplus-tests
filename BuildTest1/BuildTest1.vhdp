@@ -1,20 +1,21 @@
 Main
 (
     led : OUT STD_LOGIC := '0';
-    btn : In STD_LOGIC := '0';
+    
+    BTN : In STD_LOGIC := '0';
 )
 {
     Process()
     {
         Thread
         {
-            if(btn = '1')
+            led <= '0';
+            Wait(1ms);
+            if(BTN = '1')
             {
-                led <= '0';
-                Wait(250ms);
                 led <= '1';
-                Wait(250ms);
-            }           
+                Wait(1ms);
+            }          
         }
     }
 }
