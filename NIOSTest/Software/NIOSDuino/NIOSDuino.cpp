@@ -1,14 +1,15 @@
-//test www.vhdplus.com
+
 #include <Arduino.h>
 
-int i = 0;
-
 void setup() {
-    Serial.begin(9600); //Set Baudrate with "New Processor" test
+    pinMode(LED_BUILTIN, OUTPUT);
+    Serial.begin(9600); //Set Baudrate with "New Processor"
 }
 
-void loop() {   
+void loop() {
+    digitalWrite(LED_BUILTIN, HIGH);
     Serial.println("Hello World");
     delay(1000);
-    Serial.println("test");
+    digitalWrite(LED_BUILTIN, LOW);
+    delay(1000);
 }
