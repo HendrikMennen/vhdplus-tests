@@ -197,11 +197,13 @@ Main
                     Snack := (X => TO_INTEGER(UNSIGNED(rng_xoshiro128plusplus_out_data(4 downto 0))),
                         Y => TO_INTEGER(UNSIGNED(rng_xoshiro128plusplus_out_data(7 downto 5))));
                 }
-                elsif(Head.X < 0
-                    OR Head.Y >= LED_Matrix_Height
-                    OR Head.X >= LED_Matrix_Length
-                    OR Head.Y < 0)
-                    --OR LED_Matrix_Panel_Bitmap(Head.X)(Head.Y) = '1') --Check Collisions
+                
+--                elsif(Head.X < 0
+--                    OR Head.Y >= LED_Matrix_Height
+--                    OR Head.X >= LED_Matrix_Length
+--                    OR Head.Y < 0
+--                    OR LED_Matrix_Panel_Bitmap(Head.X)(Head.Y) = '1') --Check Collisions
+                elsif(false)
                 {
                     --Reset
                     Direction := 2;
