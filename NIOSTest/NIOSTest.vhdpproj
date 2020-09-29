@@ -3,14 +3,20 @@
   <Header>NIOSTest</Header>
   <Items xsi:type="ProjectFolder">
     <Header>Generated</Header>
+<<<<<<< HEAD
+=======
+    <Items xsi:type="ProjectFileVHDL">
+      <Header>NIOSTest.vhd</Header>
+    </Items>
+    <Items xsi:type="ProjectFileVHDL">
+      <Header>SuperCPU_Processor.vhd</Header>
+    </Items>
+>>>>>>> master
   </Items>
   <Items xsi:type="ProjectFolder">
     <Header>Libraries</Header>
     <Items xsi:type="ProjectFolder">
-      <Header>NIOSDuino</Header>
-      <Items xsi:type="ProjectFile">
-        <Header>avalon_pwm.v</Header>
-      </Items>
+      <Header>SuperCPU</Header>
       <Items xsi:type="ProjectFile">
         <Header>avalon_pwm_hw.tcl</Header>
       </Items>
@@ -18,17 +24,14 @@
         <Header>avalon_pwm_sw.tcl</Header>
       </Items>
       <Items xsi:type="ProjectFile">
-        <Header>NIOSDuino_Core.qsys</Header>
+        <Header>avalon_pwm.v</Header>
+      </Items>
+      <Items xsi:type="ProjectFile">
+        <Header>SuperCPU_Core.qsys</Header>
       </Items>
       <Items xsi:type="ProjectFileVHDP">
-        <Header>NIOSDuino_Core.vhdp</Header>
+        <Header>SuperCPU_Core.vhdp</Header>
       </Items>
-    </Items>
-    <Items xsi:type="ProjectFile">
-      <Header>ISSP.qsys</Header>
-    </Items>
-    <Items xsi:type="ProjectFileVHDP">
-      <Header>ISSP.qsys.vhdp</Header>
     </Items>
   </Items>
   <Items xsi:type="ProjectFolder">
@@ -48,5 +51,5 @@
   </Items>
   <SelectedExtensionsSave />
   <IOVoltage>0</IOVoltage>
-  <SoftwareStartPathRelative>Software\NIOSDuino</SoftwareStartPathRelative>
+  <SoftwareStartPathRelative>Software/NIOSDuino</SoftwareStartPathRelative>
 </ProjectRoot>

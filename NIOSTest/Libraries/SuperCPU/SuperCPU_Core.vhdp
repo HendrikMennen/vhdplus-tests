@@ -19,40 +19,36 @@
     WITH THE HDL Code OR THE USE OR OTHER DEALINGS IN THE HDL Code.
 
     1. Hardware Project:
-    -Add NewComponent of NIOSDuino_Processor in your code
-    -Right click the name "NIOSDuino_Processor" of the NewComponent and click on Create Signals
+    -Add NewComponent of SuperCPU_Processor in your code
+    -Right click the name "SuperCPU_Processor" of the NewComponent and click on Create Signals
     -Compile the project (and connect the signals with the FPGA I/Os)
 
     2. Software Project:
-    -Click on Tools/New NIOSDuino Project and the Software folder is created in the project
+    -Click on Tools/New SuperCPU Project and the Software folder is created in the project
 
     3. Program Software:
-    -Go to Software/NIOSDuino/NIOSDuino.cpp and program your code
+    -Go to Software/SuperCPU/SuperCPU.cpp and program your code
     -You can use the Arduino libraries and you can find more information here: https://github.com/dimag0g/nios_duino
-    -Click on NIOS/NIOS II Make and Run
+    -Click on NIOS/NIOS II Make and Download
 
     For JTAG UART:
-    -To use the nios Terminal click on NIOS/New NIOS II Terminal
-    -Write nios2-terminal (Enter) to see the output. With Ctrl+C you can stop it
+    -Click on NIOS/NIOS II JTAG Terminal
     For Standard UART:
     -NIOS/BSP Editor -> select uart_0 for stdin/stdout
-    -Use the Serial Monitor with Baud = 115200
+    -Use the Serial Monitor with the baudrate you selected when creating the processor (9600 as default)
 
     4. Non-Volatile Programming:
     -Test your code
-    -Use an UART interface instead of JTAG UART -> NIOS/BSP Editor -> select uart_0 for stdin/stdout
-    -In Eclipse import the project, right click [project name] and click on Make Targets/Build
-    -Click on mem_init_generate and on Build
-    -Go to the VHDPlus IDE and double click NIOSDuino_Core.qsys
+    -Use an UART interface instead of JTAG UART: NIOS/BSP Editor -> select uart_0 for stdin/stdout
+    -Right click the Project and click on "Make Targets"
+    -Double click in your project Libraries/SuperCPU/SuperCPU_Core.qsys
     -Click on finish, close the window and compile the VHDP project again
-    -If you upload the .pof file, the software and hardware is saved on the FPGA
-
-    If you get errors when trying to program, try to restart the Altera JTAG Server Task
+    -If you program the FPGA with Programming Mode 2, the software and hardware is saved on the FPGA
  */
 
-Component NIOSDuino_Processor
+Component SuperCPU_Processor
 (
-    --NIOSDuino Onboard
+    --SuperCPU Onboard
     Reset                      : IN    STD_LOGIC;
     sdram_addr                 : OUT   STD_LOGIC_VECTOR(11 downto 0);
     sdram_ba                   : OUT   STD_LOGIC_VECTOR(1 downto 0);
@@ -62,7 +58,7 @@ Component NIOSDuino_Processor
     sdram_ras_n                : OUT   STD_LOGIC;
     sdram_we_n                 : OUT   STD_LOGIC;
     sdram_clk_clk              : OUT   STD_LOGIC;
-    --NIOSDuino External
+    --SuperCPU External
     pio_export                 : INOUT STD_LOGIC_VECTOR(15 downto 0) := (others => 'X');
     pwm_out                    : OUT   STD_LOGIC_VECTOR(3 downto 0);
     uart_rxd                   : IN    STD_LOGIC := 'X';
@@ -145,7 +141,7 @@ Component NIOSDuino_Processor
     {
         VHDL
         {
-            component NIOSDuino_Core
+            component SuperCPU_Core
             port (
                 clk_in_clk            : in    std_logic                     := '0';             --         clk_in.clk
                 i2c_sda_in            : in    std_logic                     := '0';             --      i2c_0_ext.sda_in
@@ -178,7 +174,7 @@ Component NIOSDuino_Processor
     
     VHDL
     {
-        u1: NIOSDuino_Core port map
+        u1: SuperCPU_Core port map
         (
             clk_in_clk            => CLK,
             i2c_sda_in            => i2c_sda_in,

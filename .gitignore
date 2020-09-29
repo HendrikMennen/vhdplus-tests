@@ -3,7 +3,19 @@ Generated/
 incremental_db/
 output_files/
 db/
+## Quartus specific.
+## *.qsf
+## *.qpf
 
-## Quartus specific
-##*.qsf
-##*.qpf
+## NIOSDuino & Clangd
+.clangd/
+obj/
+
+*.elf
+*.map
+*.objdump
+
+## BSP Libraries
+**/Software/**/generated_bsp
+*.sopcinfo
+compile_commands.jso
