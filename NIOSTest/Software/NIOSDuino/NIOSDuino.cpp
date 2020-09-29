@@ -7,10 +7,7 @@ void setup() {
 }
 
 void loop() {
-<<<<<<< HEAD
-=======
     digitalWrite(LED_BUILTIN, HIGH);
->>>>>>> master
     Serial.println("Hello World");
     delay(1000);
     digitalWrite(LED_BUILTIN, LOW);

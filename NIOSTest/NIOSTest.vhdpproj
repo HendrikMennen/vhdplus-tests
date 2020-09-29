@@ -3,15 +3,12 @@
   <Header>NIOSTest</Header>
   <Items xsi:type="ProjectFolder">
     <Header>Generated</Header>
-<<<<<<< HEAD
-=======
     <Items xsi:type="ProjectFileVHDL">
       <Header>NIOSTest.vhd</Header>
     </Items>
     <Items xsi:type="ProjectFileVHDL">
       <Header>SuperCPU_Processor.vhd</Header>
     </Items>
->>>>>>> master
   </Items>
   <Items xsi:type="ProjectFolder">
     <Header>Libraries</Header>
