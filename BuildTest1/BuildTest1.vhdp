@@ -1,21 +1,14 @@
 Main
 (
     led : OUT STD_LOGIC := '0';
-    
-    BTN : In STD_LOGIC := '0';
+    btn : IN STD_LOGIC  := '0';
 )
 {
-    Process()
+    Process ()
     {
         Thread
         {
-            led <= '0';
-            Wait(1ms);
-            if(BTN = '1')
-            {
-                led <= '1';
-                Wait(1ms);
-            }          
+            
         }
     }
 }
