@@ -1,8 +1,8 @@
 [
   {
-    "directory": "/home/hendrik/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "C:\\Users\\HendrikMennen\\Documents\\VHDPlus\\Projects\\vhdplus-tests\\NIOSTest\\Software\\NIOSDuino",
     "arguments": [
-      "/home/hendrik/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
+      "C:\\intelFPGA_lite\\18.1\\nios2eds\\bin\\gnu\\H-x86_64-mingw32\\bin\\nios2-elf-gcc.exe",
       "-Iarduino",
       "-Iarduino/Wire/src",
       "-Iarduino/SPI/src",

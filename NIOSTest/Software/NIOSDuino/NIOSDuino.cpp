@@ -1,15 +1,16 @@
-
 #include <Arduino.h>
 
+String incomingString = "";
+
 void setup() {
-    pinMode(LED_BUILTIN, OUTPUT);
-    Serial.begin(9600); //Set Baudrate with "New Processor"
+    Serial.begin(9600); //Set Baudrate with "New Processor" test
 }
 
 void loop() {
-    digitalWrite(LED_BUILTIN, HIGH);
-    Serial.println("Hello World");
-    delay(1000);
-    digitalWrite(LED_BUILTIN, LOW);
-    delay(1000);
+    while(Serial.available())
+    {
+        incomingString = Serial.readString(); // read the incoming data as string
+        
+        Serial.println(incomingString);
+    }
 }
