@@ -16,7 +16,7 @@
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-//! NIOSDuino custom file, (c) Dmitry Grigoryev, 2018-2020
+//! NewCPU custom file, (c) Dmitry Grigoryev, 2018-2020
 
 #include <stdlib.h>
 #include <stdio.h>
