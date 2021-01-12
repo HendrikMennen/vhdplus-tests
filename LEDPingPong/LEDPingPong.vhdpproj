@@ -10,9 +10,6 @@
       <Header>LEDPingPong.vhd</Header>
     </Items>
     <Items xsi:type="ProjectFileVHDL">
-      <Header>LEDPingPong_Sim.vhd</Header>
-    </Items>
-    <Items xsi:type="ProjectFileVHDL">
       <Header>SPI_Master.vhd</Header>
     </Items>
   </Items>
@@ -31,6 +28,15 @@
   <Items xsi:type="ProjectFileGHDP">
     <Header>LEDPingPong_Sim.ghdp</Header>
   </Items>
-  <SelectedExtensionsSave />
+  <CruviHSExtensions>
+    <string xsi:nil="true" />
+  </CruviHSExtensions>
+  <CruviLSExtensions>
+    <string xsi:nil="true" />
+    <string xsi:nil="true" />
+    <string xsi:nil="true" />
+    <string xsi:nil="true" />
+  </CruviLSExtensions>
   <IOVoltage>0</IOVoltage>
+  <UseShield>false</UseShield>
 </ProjectRoot>

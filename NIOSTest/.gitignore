@@ -4,6 +4,9 @@ incremental_db/
 output_files/
 db/
 
+## ModelSim
+Modelsim/
+
 ## Quartus specific.
 ## *.qsf
 ## *.qpf
@@ -13,13 +16,14 @@ Libraries/ISSP
 Libraries/.qsys_edit
 
 ## NIOS
-NIOSDuino_Core.sopcinfo
-Software/NIOSDuino_bsp
-mem_init/
-Software/NIOSDuino/obj
 *.map
 *.objdump
 *.elf
+mem_init
 .clangd
+.cache
 *.flash
 *.sopcinfo
+
+## Python
+*__pycache__*
