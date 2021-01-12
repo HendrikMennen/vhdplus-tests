@@ -4,10 +4,10 @@
   <Items xsi:type="ProjectFolder">
     <Header>Generated</Header>
     <Items xsi:type="ProjectFileVHDL">
-      <Header>LED_Matrix.vhd</Header>
+      <Header>LEDPingPong.vhd</Header>
     </Items>
     <Items xsi:type="ProjectFileVHDL">
-      <Header>LEDPingPong.vhd</Header>
+      <Header>LED_Matrix.vhd</Header>
     </Items>
     <Items xsi:type="ProjectFileVHDL">
       <Header>SPI_Master.vhd</Header>
@@ -34,9 +34,9 @@
   <CruviLSExtensions>
     <string xsi:nil="true" />
     <string xsi:nil="true" />
-    <string xsi:nil="true" />
+    <string>LevelShifterExtension</string>
     <string xsi:nil="true" />
   </CruviLSExtensions>
   <IOVoltage>0</IOVoltage>
-  <UseShield>false</UseShield>
+  <UseShield>true</UseShield>
 </ProjectRoot>

@@ -19,14 +19,14 @@ set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
 set_global_assignment -name NUM_PARALLEL_PROCESSORS 12
 set_global_assignment -name INTERNAL_FLASH_UPDATE_MODE "SINGLE IMAGE"
-set_global_assignment -name VHDL_FILE Generated/LED_Matrix.vhd
 set_global_assignment -name VHDL_FILE Generated/LEDPingPong.vhd
+set_global_assignment -name VHDL_FILE Generated/LED_Matrix.vhd
 set_global_assignment -name VHDL_FILE Generated/SPI_Master.vhd
 set_location_assignment PIN_H6 -to CLK
 set_location_assignment PIN_H1 -to VS[0]
 set_location_assignment PIN_B7 -to VS[1]
 set_location_assignment PIN_L1 -to VS[2]
 set_location_assignment PIN_K13 -to VS_EN
-set_location_assignment PIN_A3 -to CLK_O
-set_location_assignment PIN_B6 -to CS_O
-set_location_assignment PIN_B5 -to DIN_O
+set_location_assignment PIN_B3 -to DIN_O
+set_location_assignment PIN_A4 -to CS_O
+set_location_assignment PIN_F4 -to CLK_O
