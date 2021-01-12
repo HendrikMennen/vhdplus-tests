@@ -8,7 +8,10 @@ Main
     {
         Thread
         {
-            
+            led <= '1';
+            Wait(10ms);
+            led <= '0';
+            Wait(10ms);
         }
     }
 }

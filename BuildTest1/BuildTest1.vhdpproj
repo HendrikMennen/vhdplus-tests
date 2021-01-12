@@ -7,12 +7,24 @@
       <Header>BuildTest1.vhd</Header>
     </Items>
   </Items>
+  <Items xsi:type="ProjectFolder">
+    <Header>Modelsim</Header>
+  </Items>
   <Items xsi:type="ProjectFileVHDP">
     <Header>BuildTest1.vhdp</Header>
   </Items>
   <Items xsi:type="ProjectFileGHDP">
     <Header>BuildTest1_Sim.ghdp</Header>
   </Items>
-  <SelectedExtensionsSave />
+  <CruviHSExtensions>
+    <string xsi:nil="true" />
+  </CruviHSExtensions>
+  <CruviLSExtensions>
+    <string xsi:nil="true" />
+    <string xsi:nil="true" />
+    <string xsi:nil="true" />
+    <string xsi:nil="true" />
+  </CruviLSExtensions>
   <IOVoltage>0</IOVoltage>
+  <UseShield>false</UseShield>
 </ProjectRoot>

@@ -5,7 +5,7 @@ Component BuildTest1_tb()
 
     Process Sim_finished()
     {
-        wait for 10000 us;
+        wait for 100000 us;
         finished <= '1';
         wait;
     }
@@ -13,14 +13,27 @@ Component BuildTest1_tb()
     NewComponent BuildTest1
     (
         led => led,
-        BTN => BTN,
+        btn => btn,
         CLK => CLK,
     );
 
     SIGNAL led : STD_LOGIC  := '0';
-    SIGNAL BTN : STD_LOGIC  := '0';
+    SIGNAL btn : STD_LOGIC  := '0';
     SIGNAL CLK : STD_LOGIC := '0';
 
+
+    Process Sim_btn()
+    {
+        While(finished /= '1')
+        {
+            btn <= '0';
+            wait for 10 ms;
+            btn <= '1';
+            wait for 10 ms;
+            wait;
+        }
+        wait;
+    }
 
     Process Sim_CLK()
     {
