@@ -47,8 +47,10 @@ Main
         VARIABLE XAdd : BOOLEAN := true;
         VARIABLE YAdd : BOOLEAN := true;
         VARIABLE Tail : PointArray(0 to TailLength) := (others => (XP => 0, YP => 0));
+        
+        VARIABLE BrightnessAdd : BOOLEAN := true;
     )
-    { 
+    {
         Thread
         {
             LED_Matrix_Panel_Bitmap(x)(y) <= '0';
@@ -110,8 +112,31 @@ Main
             LED_Matrix_Panel_Bitmap(Tail(TailLength-1).XP)(Tail(TailLength-1).YP) <= '0';
             
             
-            Step{ LED_Matrix_Update <= '0'; }
+            Step
+            {
+                LED_Matrix_Update <= '0';
+                LED_Matrix_Config <= '0';
+            }
             LED_Matrix_Update <= '1';
+            Wait(10ms);
+            
+            If(BrightnessAdd)
+            {
+                LED_Matrix_Brightness <= LED_Matrix_Brightness + 1;
+            }
+            Else
+            {
+                LED_Matrix_Brightness <= LED_Matrix_Brightness - 1;
+            }
+            If(LED_Matrix_Brightness = 0)
+            {
+                BrightnessAdd := true;
+            }
+            Elsif(LED_Matrix_Brightness = 15)
+            {
+                BrightnessAdd := false;
+            }
+            LED_Matrix_Config <= '1';
             
             Wait(100ms);
         }

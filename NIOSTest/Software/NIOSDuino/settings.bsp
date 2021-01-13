@@ -2,9 +2,9 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Sep 25, 2020 11:12:56 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1601068376161</BspGeneratedUnixTimeStamp>
-        <BspGeneratedLocation>generated_bsp</BspGeneratedLocation>
+        <BspGeneratedTimeStamp>Jan 13, 2021 12:59:23 AM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1610495963867</BspGeneratedUnixTimeStamp>
+        <BspGeneratedLocation>generated_bsp/</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>../../SuperCPU_Core.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
