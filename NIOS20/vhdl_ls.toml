@@ -1,0 +1,5 @@
+[libraries] 
+work.files = [
+	'Generated/NIOS20.vhd',
+	'Generated/NIOSDuino_Processor.vhd'
+]
