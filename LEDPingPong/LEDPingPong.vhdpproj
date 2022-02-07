@@ -1,42 +1,17 @@
-<?xml version="1.0"?>
-<ProjectRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Header>LEDPingPong</Header>
-  <Items xsi:type="ProjectFolder">
-    <Header>Generated</Header>
-    <Items xsi:type="ProjectFileVHDL">
-      <Header>LEDPingPong.vhd</Header>
-    </Items>
-    <Items xsi:type="ProjectFileVHDL">
-      <Header>LED_Matrix.vhd</Header>
-    </Items>
-    <Items xsi:type="ProjectFileVHDL">
-      <Header>SPI_Master.vhd</Header>
-    </Items>
-  </Items>
-  <Items xsi:type="ProjectFolder">
-    <Header>Libraries</Header>
-    <Items xsi:type="ProjectFileVHDP">
-      <Header>LED_Matrix.vhdp</Header>
-    </Items>
-    <Items xsi:type="ProjectFileVHDP">
-      <Header>SPI_Master.vhdp</Header>
-    </Items>
-  </Items>
-  <Items xsi:type="ProjectFileVHDP">
-    <Header>LEDPingPong.vhdp</Header>
-  </Items>
-  <Items xsi:type="ProjectFileGHDP">
-    <Header>LEDPingPong_Sim.ghdp</Header>
-  </Items>
-  <CruviHSExtensions>
-    <string xsi:nil="true" />
-  </CruviHSExtensions>
-  <CruviLSExtensions>
-    <string xsi:nil="true" />
-    <string xsi:nil="true" />
-    <string>LevelShifterExtension</string>
-    <string xsi:nil="true" />
-  </CruviLSExtensions>
-  <IOVoltage>0</IOVoltage>
-  <UseShield>true</UseShield>
-</ProjectRoot>
+﻿<Project>
+  <ItemGroup>
+    <File Include="Generated/LEDPingPong.vhd" />
+    <File Include="Generated/LED_Matrix.vhd" />
+    <File Include="Generated/SPI_Master.vhd" />
+    <File Include="Libraries/LED_Matrix.vhdp" />
+    <File Include="Libraries/SPI_Master.vhdp" />
+    <File Include="LEDPingPong.vhdp" />
+    <File Include="LEDPingPong_Sim.ghdp" />
+  </ItemGroup>
+  <PropertyGroup>
+    <SelectedFpga>Core MAX10</SelectedFpga>
+    <UseShield>True</UseShield>
+    <IoVoltage>3.3V</IoVoltage>
+    <CruviLs Extension="LevelShifterExtension" Position="2" />
+  </PropertyGroup>
+</Project>

@@ -27,6 +27,6 @@ set_location_assignment PIN_H1 -to VS[0]
 set_location_assignment PIN_B7 -to VS[1]
 set_location_assignment PIN_L1 -to VS[2]
 set_location_assignment PIN_K13 -to VS_EN
-set_location_assignment PIN_B3 -to DIN_O
 set_location_assignment PIN_A4 -to CS_O
 set_location_assignment PIN_F4 -to CLK_O
+set_location_assignment PIN_B3 -to DIN_O

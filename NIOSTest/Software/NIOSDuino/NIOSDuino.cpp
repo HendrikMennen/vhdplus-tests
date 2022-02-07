@@ -1,6 +1,6 @@
 #include <Arduino.h>
 
-String incomingString = "";
+String sauber = "";
 
 void setup() {
     Serial.begin(9600); //Set Baudrate with "New Processor" test
@@ -9,9 +9,9 @@ void setup() {
 void loop() {
     while(Serial.available())
     {
-        incomingString = Serial.readString(); // read the incoming data as string
+        sauber = Serial.readString(); // read the incoming data as string
         
-        Serial.println(incomingString);
+        Serial.println(sauber);
         
         delay(1000);
     }
