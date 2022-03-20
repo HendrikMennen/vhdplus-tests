@@ -9,9 +9,9 @@ Main
         Thread
         {
             led <= '1';
-            Wait(10ms);
+            Wait(100ms);
             led <= '0';
-            Wait(10ms);
+            Wait(100ms);
         }
     }
 }
