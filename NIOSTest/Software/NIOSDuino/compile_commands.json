@@ -1,8 +1,8 @@
 [
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -23,9 +23,9 @@
     "file": "NIOSDuino.cpp"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -45,9 +45,9 @@
     "file": "arduino/Adafruit_Sensor.h"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -67,9 +67,9 @@
     "file": "arduino/Arduino.h"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -89,9 +89,9 @@
     "file": "arduino/Client.h"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -111,9 +111,9 @@
     "file": "arduino/EEPROM.h"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -134,9 +134,9 @@
     "file": "arduino/GenericSerial.cpp"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -156,9 +156,9 @@
     "file": "arduino/GenericSerial.h"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -179,9 +179,9 @@
     "file": "arduino/HardwareSerial.cpp"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -201,9 +201,9 @@
     "file": "arduino/HardwareSerial.h"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -224,9 +224,9 @@
     "file": "arduino/HardwareSerial0.cpp"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -247,9 +247,9 @@
     "file": "arduino/HardwareSerial1.cpp"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -270,9 +270,9 @@
     "file": "arduino/HardwareSerial2.cpp"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -293,9 +293,9 @@
     "file": "arduino/HardwareSerial3.cpp"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -316,9 +316,9 @@
     "file": "arduino/IPAddress.cpp"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -338,9 +338,9 @@
     "file": "arduino/IPAddress.h"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -361,9 +361,9 @@
     "file": "arduino/Print.cpp"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -383,9 +383,9 @@
     "file": "arduino/Print.h"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -405,9 +405,9 @@
     "file": "arduino/Printable.h"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -428,9 +428,9 @@
     "file": "arduino/SPIFlash.cpp"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -450,9 +450,9 @@
     "file": "arduino/SPIFlash.h"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -472,9 +472,9 @@
     "file": "arduino/Server.h"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -495,9 +495,9 @@
     "file": "arduino/Stream.cpp"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -517,9 +517,9 @@
     "file": "arduino/Stream.h"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -539,9 +539,9 @@
     "file": "arduino/Udp.h"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -561,9 +561,9 @@
     "file": "arduino/WCharacter.h"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -584,9 +584,9 @@
     "file": "arduino/WMath.cpp"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -607,9 +607,9 @@
     "file": "arduino/WString.cpp"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -629,9 +629,9 @@
     "file": "arduino/WString.h"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -651,9 +651,9 @@
     "file": "arduino/avalon_pwm_regs.h"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -673,9 +673,9 @@
     "file": "arduino/binary.h"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -696,9 +696,9 @@
     "file": "arduino/main.cpp"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -718,9 +718,9 @@
     "file": "arduino/pins_arduino.h"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -741,9 +741,9 @@
     "file": "arduino/wiring_analog.cpp"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -764,9 +764,9 @@
     "file": "arduino/wiring_digital.cpp"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -786,9 +786,9 @@
     "file": "arduino/wiring_pulse.c"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -808,9 +808,9 @@
     "file": "arduino/wiring_shift.c"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -831,9 +831,9 @@
     "file": "arduino/SPI/src/SPI.cpp"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -853,9 +853,9 @@
     "file": "arduino/SPI/src/SPI.h"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -876,9 +876,9 @@
     "file": "arduino/Wire/src/Wire.cpp"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -898,9 +898,9 @@
     "file": "arduino/Wire/src/Wire.h"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -920,9 +920,9 @@
     "file": "arduino/avr/eeprom.c"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -942,9 +942,9 @@
     "file": "arduino/avr/eeprom.h"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -964,9 +964,9 @@
     "file": "arduino/avr/interrupt.h"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
@@ -986,9 +986,9 @@
     "file": "arduino/avr/io.h"
   },
   {
-    "directory": "C:/Users/HendrikMennen/Documents/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
+    "directory": "/Users/hendrikmennen/VHDPlus/Projects/vhdplus-tests/NIOSTest/Software/NIOSDuino",
     "arguments": [
-      "C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/nios2-elf-gcc.exe",
+      "nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/nios2-elf-gcc",
       "-I./generated_bsp/",
       "-I./generated_bsp/HAL/inc",
       "-I./generated_bsp/drivers/inc",
