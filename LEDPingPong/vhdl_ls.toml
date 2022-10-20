@@ -1,0 +1,14 @@
+# auto-generated
+[Libraries]
+work.files = [
+	'Generated/LEDPingPong.vhd',
+	'Generated/MAX7219_Interface.vhd',
+	'Generated/SPI_Master.vhd'
+]
+[libraries.work]
+files = [
+	'Generated/LEDPingPong.vhd',
+	'Generated/MAX7219_Interface.vhd',
+	'Generated/SPI_Master.vhd'
+]
+# auto-generated-end

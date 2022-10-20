@@ -1,19 +1,13 @@
 Main
 (
-    CS_O          : BUFFER STD_LOGIC;
-    CLK_O         : OUT STD_LOGIC;
-    DIN_O         : OUT STD_LOGIC;
+    CS_O: out STD_LOGIC := '1';
+    CLK_O: out STD_LOGIC := '0';
+    DIN_O: out STD_LOGIC := '0';
 )
 {
     CONSTANT LED_Matrix_Length : NATURAL := (4*8);
     CONSTANT LED_Matrix_Height : NATURAL := 8;
     CONSTANT TailLength : NATURAL := 20;
-
-    SIGNAL LED_Matrix_Panel_Bitmap  : LED_Matrix_Array (LED_Matrix_Length-1 downto 0);
-    SIGNAL LED_Matrix_Update        : STD_LOGIC;
-    SIGNAL LED_Matrix_Brightness    : NATURAL          range 0 to 15 := 5;
-    SIGNAL LED_Matrix_Shutdown      : STD_LOGIC := '0';
-    SIGNAL LED_Matrix_Config        : STD_LOGIC;
     
     TYPE Point IS RECORD
     XP : NATURAL range 0 to LED_Matrix_Length;
@@ -22,22 +16,29 @@ Main
     
     TYPE PointArray IS ARRAY (natural range <>) OF Point;
     
-    NewComponent LED_Matrix
+    CONSTANT MAX7219_Interface_Panels: NATURAL := 4;
+    SIGNAL MAX7219_Interface_Reset: STD_LOGIC := '0';
+    SIGNAL MAX7219_Interface_Panel_Bitmap: LED_Matrix_Array((MAX7219_Interface_Panels * 8) - 1 downto 0) := (others => (others => '0'));
+    SIGNAL MAX7219_Interface_Update: STD_LOGIC := '0';
+    SIGNAL MAX7219_Interface_Brightness: NATURAL range 0 to 15 := 5;
+    SIGNAL MAX7219_Interface_Shutdown: STD_LOGIC := '0';
+    SIGNAL MAX7219_Interface_Config: STD_LOGIC := '0';
+    NewComponent MAX7219_Interface
     (
-        CLK_Frequency => 12000000,
-        Panels        => 4,
+        CLK_Frequency => 2000000,
+        Panels        => MAX7219_Interface_Panels,
         Rotate_seg    => '1',
         Mirror        => '1',
-        
-        Reset         => '0',
+
+        Reset         => MAX7219_Interface_Reset,
         CS_O          => CS_O,
         CLK_O         => CLK_O,
         DIN_O         => DIN_O,
-        Panel_Bitmap  => LED_Matrix_Panel_Bitmap,
-        Update        => LED_Matrix_Update,
-        Brightness    => LED_Matrix_Brightness,
-        Shutdown      => LED_Matrix_Shutdown,
-        Config        => LED_Matrix_Config,
+        Panel_Bitmap  => MAX7219_Interface_Panel_Bitmap,
+        Update        => MAX7219_Interface_Update,
+        Brightness    => MAX7219_Interface_Brightness,
+        Shutdown      => MAX7219_Interface_Shutdown,
+        Config        => MAX7219_Interface_Config,
     );
     
     Process
@@ -53,7 +54,7 @@ Main
     {
         Thread
         {
-            LED_Matrix_Panel_Bitmap(x)(y) <= '0';
+            MAX7219_Interface_Panel_Bitmap(x)(y) <= '0';
 
             if(XAdd)
             {
@@ -100,43 +101,43 @@ Main
             }
 
             
-            LED_Matrix_Panel_Bitmap(x)(y) <= '1';
+            MAX7219_Interface_Panel_Bitmap(x)(y) <= '1';
             
             For (VARIABLE i : INTEGER := TailLength - 1; i > 0; i := i - 1)
             {
                 Tail(i) := Tail(i - 1);
-                LED_Matrix_Panel_Bitmap(Tail(i).XP)(Tail(i).YP) <= '1';
+                MAX7219_Interface_Panel_Bitmap(Tail(i).XP)(Tail(i).YP) <= '1';
             }
             Tail(0) := (XP => x, YP => y);
             
-            LED_Matrix_Panel_Bitmap(Tail(TailLength-1).XP)(Tail(TailLength-1).YP) <= '0';
+            MAX7219_Interface_Panel_Bitmap(Tail(TailLength-1).XP)(Tail(TailLength-1).YP) <= '0';
             
             
             Step
             {
-                LED_Matrix_Update <= '0';
-                LED_Matrix_Config <= '0';
+                MAX7219_Interface_Update <= '0';
+                MAX7219_Interface_Config <= '0';
             }
-            LED_Matrix_Update <= '1';
+            MAX7219_Interface_Update <= '1';
             Wait(10ms);
             
             If(BrightnessAdd)
             {
-                LED_Matrix_Brightness <= LED_Matrix_Brightness + 1;
+                MAX7219_Interface_Brightness <= MAX7219_Interface_Brightness + 1;
             }
             Else
             {
-                LED_Matrix_Brightness <= LED_Matrix_Brightness - 1;
+                MAX7219_Interface_Brightness <= MAX7219_Interface_Brightness - 1;
             }
-            If(LED_Matrix_Brightness = 0)
+            If(MAX7219_Interface_Brightness = 0)
             {
                 BrightnessAdd := true;
             }
-            Elsif(LED_Matrix_Brightness = 15)
+            Elsif(MAX7219_Interface_Brightness = 15)
             {
                 BrightnessAdd := false;
             }
-            LED_Matrix_Config <= '1';
+            MAX7219_Interface_Config <= '1';
             
             Wait(100ms);
         }

@@ -35,9 +35,4 @@ Component LEDPingPong_tb()
         }
         wait;
     }
-    
-    Generate (for i in 0 to )
-    {
-        
-    }
 }

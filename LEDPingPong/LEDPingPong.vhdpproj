@@ -1,16 +1,16 @@
 ﻿<Project>
   <ItemGroup>
     <File Include="Generated/LEDPingPong.vhd" />
-    <File Include="Generated/LED_Matrix.vhd" />
+    <File Include="Generated/MAX7219_Interface.vhd" />
     <File Include="Generated/SPI_Master.vhd" />
-    <File Include="Libraries/LED_Matrix.vhdp" />
+    <File Include="Libraries/MAX7219_LED_Matrix.vhdp" />
     <File Include="Libraries/SPI_Master.vhdp" />
     <File Include="LEDPingPong.vhdp" />
     <File Include="LEDPingPong_Sim.ghdp" />
+    <File Include="LEDPingPong_tb.vcd" />
   </ItemGroup>
   <PropertyGroup>
-    <SelectedFpga>Core MAX10</SelectedFpga>
-    <UseShield>True</UseShield>
+    <SelectedFpga>Core MAX10 + Shield</SelectedFpga>
     <IoVoltage>3.3V</IoVoltage>
     <CruviLs Extension="LevelShifterExtension" Position="2" />
   </PropertyGroup>
